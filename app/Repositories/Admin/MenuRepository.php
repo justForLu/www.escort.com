@@ -9,7 +9,6 @@
 namespace App\Repositories\Admin;
 
 use App\Enums\ModuleEnum;
-use App\Models\Admin\Manager;
 use App\Models\Admin\Menu;
 use App\Repositories\Admin\Criteria\MenuCriteria;
 use App\Repositories\BaseRepository;

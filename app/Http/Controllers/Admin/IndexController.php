@@ -8,18 +8,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-
+use Illuminate\Support\Facades\Log;
 
 class IndexController extends BaseController
 {
 
-    public function __construct()
+    public function index()
     {
-        parent::__construct();
-    }
-
-    public function index(){
-
+        Log::info('test');
+        return view('admin.index.index');
     }
 
 }

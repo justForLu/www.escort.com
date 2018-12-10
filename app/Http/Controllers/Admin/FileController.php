@@ -8,11 +8,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Enums\BasicEnum;
 use App\Enums\ModuleEnum;
 use App\Models\Admin\File;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use Illuminate\Support\Facades\Config;
 
 class FileController extends BaseController
