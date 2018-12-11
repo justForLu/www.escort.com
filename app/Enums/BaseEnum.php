@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 14:37
- */
 
 namespace App\Enums;
 
@@ -20,7 +14,6 @@ class BaseEnum extends Enum {
      * Returns the description of this enum
      * @param $key
      * @return null
-     * @throws \ReflectionException
      */
     public static function getEnumDesc($key){
         $reflection = new ReflectionClass(get_called_class());
@@ -38,7 +31,6 @@ class BaseEnum extends Enum {
      * 获取枚举类的描述
      * @param $value
      * @return null
-     * @throws \ReflectionException
      */
     public static function getDesc($value)
     {
@@ -57,9 +49,9 @@ class BaseEnum extends Enum {
      * @param $select
      * @param null $default
      * @param null $name
-     * @param string $class
+     * @param $class
      * @param array $except
-     * @throws \ReflectionException
+     * @return string
      */
     public static function enumSelect($select,$default=null,$name=null,$class='form-control',$except=array())
     {
@@ -92,7 +84,6 @@ class BaseEnum extends Enum {
     /**
      * 读取枚举数组
      * @return array
-     * @throws \ReflectionException
      */
     public static function enumItems()
     {
@@ -103,8 +94,8 @@ class BaseEnum extends Enum {
         if($enumItems) {
             foreach ($enumItems as $key => $val) {
                 $enumArr[] = array(
-                    'key' => $val->getConstValue(),
-                    'value' => self::getEnumDesc($key)
+                   'key' => $val->getConstValue(),
+                   'value' => self::getEnumDesc($key)
                 );
             }
         }
@@ -115,10 +106,11 @@ class BaseEnum extends Enum {
     /**
      * 获取枚举单选框
      * @param $select
+     * @param null $default
      * @param null $name
-     * @param string $class
+     * @param null $class
      * @param array $except
-     * @throws \ReflectionException
+     * @return string
      */
     public static function enumRadio($select,$name=null,$class='radio-inline',$except=array())
     {

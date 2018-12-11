@@ -1,19 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 16:59
- */
 
 namespace App\Http\Controllers\Admin;
 
 use App\Enums\ModuleEnum;
-use App\Requests\Admin\MenuRequest;
+use App\Http\Requests\Admin\MenuRequest;
 use App\Repositories\Admin\Criteria\MenuCriteria;
 use App\Repositories\Admin\MenuRepository as Menu;
 use App\Services\TreeService;
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
@@ -36,11 +32,6 @@ class MenuController extends BaseController
      *
      * @param Request $request
      * @return \Illuminate\Http\Response
-     */
-    /**
-     * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * @throws \ReflectionException
      */
     public function index(Request $request)
     {
@@ -81,7 +72,7 @@ class MenuController extends BaseController
      * Store a newly created resource in storage.
      *
      * @param MenuRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(MenuRequest $request)
     {
@@ -113,7 +104,8 @@ class MenuController extends BaseController
     /**
      * Display the specified resource.
      *
-     * @param $id
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
@@ -148,9 +140,9 @@ class MenuController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param MenuRequest $request
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param MenuRequest|Request $request
+     * @param  int $id
+     * @return \Illuminate\Http\Response
      */
     public function update(MenuRequest $request, $id)
     {
@@ -177,7 +169,8 @@ class MenuController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

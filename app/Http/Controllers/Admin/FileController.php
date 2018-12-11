@@ -1,16 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 16:58
- */
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\BasicEnum;
 use App\Enums\ModuleEnum;
 use App\Models\Admin\File;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Config;
 
 class FileController extends BaseController
@@ -64,7 +60,7 @@ class FileController extends BaseController
 
     /*  上传文件  */
     public function uploadFile(Request $request){
-//        $file = $request->file('Filedata'); // 不同环境可能获取方式有点不同，可以打印观察一下 dd(Input());
+//        $file = $request->file('Filedata'); // 不同环境可能获取方式有点不同，可以下打印观察一下 dd(Input());
 //        if($file->isValid())
 //        {
 //            // 上传目录。 public目录下 uploads/thumb 文件夹

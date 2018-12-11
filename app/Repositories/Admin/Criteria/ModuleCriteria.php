@@ -1,23 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:27
- */
-
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:26
- */
 namespace App\Repositories\Admin\Criteria;
+
 
 use Bosnadev\Repositories\Criteria\Criteria;
 use Bosnadev\Repositories\Contracts\RepositoryInterface as Repository;
 
-class LogCriteria extends Criteria {
+class ModuleCriteria extends Criteria {
 
     private $conditions;
 
@@ -32,6 +20,11 @@ class LogCriteria extends Criteria {
      */
     public function apply($model, Repository $repository)
     {
+        if(isset($this->conditions['name'])){
+            $model = $model->where('name', 'like','%' . $this->conditions['name'] . '%');
+        }
+
+        $model = $model->orderBy('id','DESC');
 
         return $model;
     }

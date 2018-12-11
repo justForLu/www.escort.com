@@ -46,7 +46,10 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
+        'hotel.auth' => \App\Http\Middleware\HotelAuthenticate::class,
+        'rcu.auth' => \App\Http\Middleware\RcuAuthenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'admin.check' => \App\Http\Middleware\AdminCheckPermission::class,

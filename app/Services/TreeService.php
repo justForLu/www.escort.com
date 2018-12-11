@@ -1,30 +1,23 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:40
- */
-
 namespace App\Services;
 
 class TreeService
 {
     //主键
     private static $primary = 'id';
-
+    
     //父键
     private static $parentId = 'parent';
-
+    
     //子节点名称
     private static $child = 'children';
-
+    
     public static function setConfig($primary = '', $parentId = '', $child = ''){
         if(!empty($primary)) self::$primary  = $primary;
         if(!empty($prentId)) self::$parentId = $parentId;
         if(!empty($child))   self::$child    = $child;
     }
-
+    
     public static function makeTree(&$data, $index = 0)
     {
         $children = self::findChild($data, $index);

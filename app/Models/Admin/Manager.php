@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:20
- */
 
 namespace App\Models\Admin;
 
@@ -20,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Manager extends Base implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword, SoftDeletes;
+    use Authenticatable, CanResetPassword;
 
     // 模型对应表名
     protected $table = 'manager';

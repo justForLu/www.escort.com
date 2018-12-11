@@ -1,16 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 19:09
- */
 
-namespace App\Requests\Admin;
+namespace App\Http\Requests\Admin;
 
-use App\Requests\Request;
+use App\Http\Requests\Request;
 
-class AuthorityRequest extends Request
+class PermissionRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

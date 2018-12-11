@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/9
- * Time: 2:46
- */
 use App\Models\Admin\File as FileModel;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;

@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:28
- */
-
 namespace App\Repositories\Admin\Criteria;
+
 
 use Bosnadev\Repositories\Criteria\Criteria;
 use Bosnadev\Repositories\Contracts\RepositoryInterface as Repository;
@@ -36,9 +30,9 @@ class RoleCriteria extends Criteria {
 
         if(isset($this->conditions['parent']) && !empty($this->conditions['parent'])){
             //if(isset($this->conditions['self']) && $this->conditions['self']){
-            $model = $model->where('parent', $this->conditions['parent'])->orWhere(function ($query) {
-                $query->where('id', $this->conditions['parent']);
-            });
+                $model = $model->where('parent', $this->conditions['parent'])->orWhere(function ($query) {
+                    $query->where('id', $this->conditions['parent']);
+                });
             //}else{
             //    $model = $model->where('parent', $this->conditions['parent']);
             //}

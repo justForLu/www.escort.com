@@ -1,12 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:20
- */
 
 namespace App\Models\Admin;
+
 
 use App\Enums\BasicEnum;
 use App\Enums\BoolEnum;

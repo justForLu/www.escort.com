@@ -1,12 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:24
- */
 
 namespace App\Repositories\Admin;
+
 
 use App\Enums\BasicEnum;
 use App\Repositories\BaseRepository;

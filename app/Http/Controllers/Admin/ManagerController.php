@@ -1,22 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 16:59
- */
 
 namespace App\Http\Controllers\Admin;
 
 use App\Enums\BoolEnum;
 use App\Enums\ModuleEnum;
-use App\Requests\Admin\ManagerRequest;
+use App\Http\Requests\Admin\ManagerRequest;
 use App\Models\Admin\RoleUser;
 use App\Repositories\Admin\Criteria\ManagerCriteria;
 use App\Repositories\Admin\Criteria\RoleCriteria;
 use App\Repositories\Admin\ManagerRepository as Manager;
 use App\Repositories\Admin\RoleRepository as Role;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -82,8 +77,8 @@ class ManagerController extends BaseController
     /**
      * Store a newly created resource in storage.
      *
-     * @param ManagerRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param ManagerRequest|Request $request
+     * @return \Illuminate\Http\Response
      */
     public function store(ManagerRequest $request)
     {
@@ -156,9 +151,9 @@ class ManagerController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param ManagerRequest $request
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param ManagerRequest|Request $request
+     * @param  int $id
+     * @return \Illuminate\Http\Response
      */
     public function update(ManagerRequest $request, $id)
     {
@@ -207,8 +202,8 @@ class ManagerController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

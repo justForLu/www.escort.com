@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 15:53
- */
-
 namespace App\Http\Controllers\Home;
 
 
@@ -21,7 +14,11 @@ class IndexController extends BaseController
 
     public function index()
     {
-        return view('home.index.index');
+        return redirect('/home/course/index');
     }
 
 }
+
+
+
+

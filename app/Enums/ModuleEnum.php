@@ -1,13 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 16:56
- */
 
 namespace App\Enums;
 
+/**
+ * @method static BaseEnum ENUM()
+ */
 class ModuleEnum extends BaseEnum {
 
     const ADMIN = 1;
