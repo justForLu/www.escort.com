@@ -1,11 +1,6 @@
-<link rel="stylesheet" href="{{asset("/assets/plugins/bootstrap/css/bootstrap.min.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/plugins/awesome/css/font-awesome.min.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/plugins/adminlte/AdminLTE.min.css")}}">
+<link rel="stylesheet" href="{{asset("/assets/admin/iconfonts/mdi/css/materialdesignicons.min.css")}}">
 <link rel="stylesheet" href="{{asset("/assets/admin/css/reset.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/admin/css/app.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/plugins/summernote/summernote.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/plugins/weui/weui.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/plugins/select2/select2.min.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/plugins/daterangepicker/daterangepicker-bs3.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/plugins/slider/bootstrap-slider.min.css")}}">
-<link rel="stylesheet" href="{{asset("/assets/plugins/iCheck/skins/all.css")}}">
+<link rel="stylesheet" href="{{asset("/assets/admin/css/style.css")}}">
+<link rel="stylesheet" href="{{asset("/assets/admin/css/vendor.bundle.base.css")}}">
+<link rel="stylesheet" href="{{asset("/assets/admin/iconfonts/mdi/scss/_icons.scss")}}">
+<link rel="stylesheet" href="{{asset("/assets/admin/css/_sidebar.scss")}}">
