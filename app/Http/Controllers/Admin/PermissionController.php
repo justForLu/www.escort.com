@@ -1,21 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 16:59
- */
 
 namespace App\Http\Controllers\Admin;
 
 use App\Enums\ModuleEnum;
-use App\Requests\Admin\PermissionRequest;
+use App\Http\Requests\Admin\PermissionRequest;
 use App\Repositories\Admin\Criteria\MenuCriteria;
 use App\Repositories\Admin\Criteria\PermissionCriteria;
 use App\Repositories\Admin\MenuRepository as Menu;
 use App\Repositories\Admin\PermissionRepository as Permission;
 use App\Services\TreeService;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Config;
 
 class PermissionController extends BaseController
@@ -39,8 +34,7 @@ class PermissionController extends BaseController
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * @throws \ReflectionException
+     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -81,7 +75,7 @@ class PermissionController extends BaseController
      * Store a newly created resource in storage.
      *
      * @param PermissionRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(PermissionRequest $request)
     {
@@ -134,9 +128,9 @@ class PermissionController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param PermissionRequest $request
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param PermissionRequest|Request $request
+     * @param  int $id
+     * @return \Illuminate\Http\Response
      */
     public function update(PermissionRequest $request, $id)
     {
@@ -148,8 +142,8 @@ class PermissionController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

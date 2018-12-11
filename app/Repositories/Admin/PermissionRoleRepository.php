@@ -1,12 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:26
- */
 
 namespace App\Repositories\Admin;
+
 
 use App\Repositories\BaseRepository;
 
@@ -46,9 +41,9 @@ class PermissionRoleRepository extends BaseRepository
      */
     public function delPermissionRoles($permissions,$role){
         return $this->model->where(function($query) use($permissions,$role){
-            $query->where('role_id',$role->id)
-                ->whereIn('permission_id',$permissions);
-        })->delete();
+                                $query->where('role_id',$role->id)
+                                      ->whereIn('permission_id',$permissions);
+                            })->delete();
     }
 
     /**

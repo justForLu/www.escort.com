@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/12/8
- * Time: 17:21
- */
 
 namespace App\Http\Controllers\Admin;
 
 use App\Enums\BoolEnum;
 use App\Enums\ModuleEnum;
-use App\Requests\Admin\AuthorityRequest;
-use App\Requests\Admin\RoleRequest;
+use App\Http\Requests\Admin\AuthorityRequest;
+use App\Http\Requests\Admin\RoleRequest;
+use App\Models\Admin\RoleUser;
 use App\Repositories\Admin\PermissionRepository as Permission;
 use App\Repositories\Admin\Criteria\MenuCriteria;
 use App\Repositories\Admin\Criteria\RoleCriteria;
@@ -20,6 +15,7 @@ use App\Repositories\Admin\MenuRepository as Menu;
 use App\Repositories\Admin\PermissionRoleRepository as PermissionRole;
 use App\Services\TreeService;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -58,8 +54,7 @@ class RoleController extends BaseController
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * @throws \ReflectionException
+     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -97,8 +92,8 @@ class RoleController extends BaseController
     /**
      * Store a newly created resource in storage.
      *
-     * @param RoleRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param RoleRequest|Request $request
+     * @return \Illuminate\Http\Response
      */
     public function store(RoleRequest $request)
     {
@@ -156,9 +151,9 @@ class RoleController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param RoleRequest $request
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param RoleRequest|Request $request
+     * @param  int $id
+     * @return \Illuminate\Http\Response
      */
     public function update(RoleRequest $request, $id)
     {
@@ -176,8 +171,8 @@ class RoleController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
