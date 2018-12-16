@@ -8,8 +8,6 @@ use App\Repositories\Admin\Criteria\MenuCriteria;
 use App\Repositories\Admin\MenuRepository as Menu;
 use App\Services\TreeService;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;

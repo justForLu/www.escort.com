@@ -10,7 +10,6 @@ use App\Repositories\Admin\MenuRepository as Menu;
 use App\Repositories\Admin\PermissionRepository as Permission;
 use App\Services\TreeService;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use Illuminate\Support\Facades\Config;
 
 class PermissionController extends BaseController

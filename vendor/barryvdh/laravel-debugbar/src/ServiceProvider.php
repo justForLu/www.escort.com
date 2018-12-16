@@ -90,7 +90,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
                 'as' => 'debugbar.clockwork',
             ]);
 
-            $router->get('assets/stylesheets', [
+            $router->get('assets/css', [
                 'uses' => 'AssetController@css',
                 'as' => 'debugbar.assets.css',
             ]);
