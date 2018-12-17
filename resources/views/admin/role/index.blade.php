@@ -11,6 +11,18 @@
                     <div class="heading">
                         @can('role.create')<a class="btn btn-sm btn-primary-outline pull-right" href="{!!route('admin.role.create')!!}" title="添加角色"><i class="icon-plus"></i>创建角色</a>@endcan
                     </div>
+                    <div class="box-search">
+                        <form action="{!! route('admin.role.index') !!}" method="get" class="form-horizontal" role="form">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="module" value="{{$params['module']}}">
+                            <div class="col-md-2">
+                                <input type="text" name="name" autocomplete="off" class="form-control" placeholder="角色名称" value="{{ isset($params['name']) ?  $params['name'] : ''}}">
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" id="search-btn" class="btn btn-success">查询</button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="widget-content padded clearfix">
                         <table class="table table-bordered table-striped">
                             <thead>

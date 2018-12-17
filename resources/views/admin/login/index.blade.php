@@ -13,7 +13,7 @@
                     <input type="password" name="password" class="form-control" autocomplete="new-password" placeholder="密码">
                 </div>
                 <div class="form-group" style="margin-top: 25px; width: 80%; padding-left: 15%;">
-                    <input type="submit" value="登录" class="btn btn-lg btn-block btn-primary">
+                    <button type="submit" class="btn btn-lg btn-block btn-primary J_ajax_submit_btn">登录</button>
                 </div>
             </form>
         </div>

@@ -11,6 +11,16 @@
                     <div class="heading">
                         @can('manager.create')<a class="btn btn-sm btn-primary-outline pull-right" href="{!!route('admin.manager.create')!!}" title="添加管理员"><i class="icon-plus"></i>创建管理员</a>@endcan
                     </div>
+                    <div class="box-search">
+                        <form action="{!! route('admin.manager.index') !!}" method="get" class="form-horizontal" role="form">
+                            <div class="col-md-2">
+                                <input type="text" name="username" class="form-control" placeholder="用户名" value="{{ isset($params['username']) ?  $params['username'] : ''}}">
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" id="search-btn" class="btn btn-success">查询</button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="widget-content padded clearfix">
                         <table class="table table-bordered table-striped">
                             <thead>

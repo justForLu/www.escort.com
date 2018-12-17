@@ -9,7 +9,7 @@
             <div class="col-lg-12">
                 <div class="widget-container fluid-height clearfix">
                     <div class="widget-content padded">
-                        <form action="{!!route('admin.manager.update',array('id'=>$params['id']))!!}" method="post" class="form-horizontal">
+                        <form action="{!!route('admin.manager.update',array('id'=>$params['id']))!!}" method="post" class="form-horizontal J_ajaxForm">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="id" value="{{$params['id']}}">
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2"></label>
                                 <div class="col-md-7">
-                                    <button type="submit" class="btn btn-primary">提交</button>
+                                    <button type="submit" class="btn btn-primary J_ajax_submit_btn">提交</button>
                                     <a href="{!! route('admin.manager.index') !!}" class="btn btn-default">取消</a>
                                 </div>
                             </div>

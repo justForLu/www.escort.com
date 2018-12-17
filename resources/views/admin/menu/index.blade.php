@@ -11,6 +11,16 @@
                     <div class="heading">
                         @can('menu.create')<a class="btn btn-sm btn-primary-outline pull-right" href="{!!route('admin.menu.create')!!}" title="添加菜单"><i class="icon-plus"></i>创建菜单</a>@endcan
                     </div>
+                    <div class="box-search">
+                        <form action="{!! route('admin.menu.index') !!}" method="get" class="form-horizontal" role="form">
+                            <div class="col-md-2">
+                                <input type="text" name="name" autocomplete="off" class="form-control" placeholder="菜单名称" value="{{ isset($params['name']) ?  $params['name'] : ''}}">
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" id="search-btn" class="btn btn-success">查询</button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="widget-content padded clearfix">
                         <table class="table table-bordered table-striped">
                             <thead>
