@@ -1,53 +1,53 @@
 @extends('admin.layout.base')
 
 @section('content')
-    <div class="container-fluid main-content">
-        <div class="page-title">
-            <h1>权限管理</h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="widget-container fluid-height clearfix">
-                    <div class="heading">
-                        @can('permission.create')<a class="btn btn-sm btn-primary-outline pull-right" href="{!!route('admin.permission.create')!!}" title="添加权限"><i class="icon-plus"></i>创建权限</a>@endcan
-                    </div>
-                    <div class="box-search">
-                        <form action="{!! route('admin.permission.index') !!}" method="get" class="form-horizontal" role="form">
-                            <div class="col-md-2">
-                                <input type="text" name="name" class="form-control" placeholder="权限名称" value="{{ isset($params['name']) ?  $params['name'] : ''}}">
-                            </div>
-                            <div class="col-md-1">
-                                <button type="submit" id="search-btn" class="btn btn-success">查询</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="widget-content padded clearfix">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                            <th>ID</th>
-                            <th>权限名称</th>
-                            <th>所属菜单</th>
-                            <th>权限编码</th>
-                            <th>操作</th>
-                            </thead>
-                            <tbody>
-                            @foreach ($list as $data)
-                                <tr>
-                                    <td>{{$data->id}}</td>
-                                    <td>{{$data->name}}</td>
-                                    <td>{{$data->menu->name}}</td>
-                                    <td>{{$data->code}}</td>
-                                    <td>
-                                        @can('permission.edit')<a href="{!!route('admin.permission.edit',array($data->id))!!}" class="btn btn-xs btn-success"><i class="icon-pencil"></i>编辑</a>@endcan
-                                        @can('permission.destroy')<a href="{!!route('admin.permission.destroy',array($data->id))!!}" data-token="{{csrf_token()}}" class="btn btn-xs btn-danger"><i class="icon-trash"></i>删除</a>@endcan
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <fieldset class="main-field main-field-title">
+        <legend>权限管理</legend>
+    </fieldset>
+
+    <div class="main-toolbar">
+        <div class="main-toolbar-item">
+            @can('permission.create')<a href="{!!route('admin.permission.create')!!}" class="btn btn-sm bg-olive J_layer_dialog" title="创建权限">创建权限</a>@endcan
         </div>
     </div>
+
+    <div class="box">
+        <div class="box-header">
+            <form action="{!! route('admin.permission.index') !!}" method="get" class="form-horizontal" role="form">
+                <div class="col-sm-2">
+                    <input type="text" name="name" class="form-control" placeholder="权限名称" value="{{ isset($params['name']) ?  $params['name'] : ''}}">
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" id="search-btn" class="btn bg-olive">查询</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>权限名称</th>
+            <th>所属菜单</th>
+            <th>权限编码</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach ($list as $data)
+            <tr>
+                <td>{{$data->id}}</td>
+                <td>{{$data->name}}</td>
+                <td>{{$data->menu->name}}</td>
+                <td>{{$data->code}}</td>
+                <td>
+                    @can('permission.edit')<a href="{!!route('admin.permission.edit',array($data->id))!!}" class="btn bg-olive btn-xs J_layer_dialog" title="编辑权限"><i class="fa fa-edit"></i>编辑</a>@endcan
+                    @can('permission.destroy')<a href="{!!route('admin.permission.destroy',array($data->id))!!}" class="btn btn-danger btn-xs J_layer_dialog_del" title="删除" data-token="{{ csrf_token() }}"><i class="fa fa-trash-o"></i>删除</a>@endcan
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    @include('admin.public.pages')
 @endsection

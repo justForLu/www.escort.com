@@ -8,7 +8,7 @@
         </li>
         @if(isset($userMenus))
             @foreach($userMenus as $menu1)
-                <li @if(isset($menu1->active))class="nav-link active"@else class="nav-link"@endif>
+                <li @if(isset($menu1->active))class="nav-link active"@else class="nav-item"@endif>
                     <a class="nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="ui-basic" @if(isset($menu1->children))href="#{{$menu1->code}}"@endif>
                         <span class="menu-title">{{$menu1->name}}</span>
                         <i class="menu-arrow"></i>
@@ -19,7 +19,7 @@
                             <ul class="nav flex-column sub-menu">
                                 @foreach($menu1->children as $menu2)
                                 <li class="nav-item">
-                                    <a @if(isset($menu2->active))class="nav-link active"@endif href="/admin{{$menu2->url}}">{{$menu2->name}}</a>
+                                    <a @if(isset($menu2->active))class="nav-link active"@else class="nav-link"@endif href="/admin{{$menu2->url}}">{{$menu2->name}}</a>
                                 </li>
                                 @endforeach
                             </ul>
