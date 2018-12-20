@@ -11,9 +11,10 @@
     @include('admin.public.header')
     <div class="container-fluid page-body-wrapper">
         @include('admin.public.sidebar')
-
-        <div class="content-wrapper">
-            @yield('content')
+        <div class="main-panel">
+            <div class="content-wrapper">
+                @yield('content')
+            </div>
         </div>
     </div>
 </div>

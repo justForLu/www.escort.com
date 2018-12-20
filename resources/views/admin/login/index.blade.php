@@ -7,10 +7,9 @@
                 <div class="row w-100">
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left p-5">
-                            <div class="brand-logo">
-                                {{--<img src="../../images/logo.svg">--}}
+                            <div class="brand-logo" style="text-align: center;">
+                                <img src="{{asset("/assets/admin/images/login_logo.png")}}" width="100%">
                             </div>
-                            <h6 class="font-weight-light">Sign in to continue.</h6>
                             <form class="pt-3 J_ajaxForm" method="post" action="{{url('admin/login')}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group">
