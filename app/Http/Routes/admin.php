@@ -41,11 +41,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
         Route::match(['get', 'post'],'/role/authority/{id?}', 'RoleController@authority');
         Route::post('/file/uploadPic','FileController@uploadPic');
         Route::post('/file/uploadFile','FileController@uploadFile');
-        Route::resource('/news', 'NewsController');
-        Route::resource('/check_category', 'CheckCategoryController');
-        Route::get('/getChildrenCategory', 'CheckCategoryController@getChildrenCategory');
-        Route::resource('/check_content', 'CheckContentController');
-        Route::resource('/course', 'CourseController');
+        Route::resource('/config', 'ConfigController');
+        Route::resource('/ad', 'AdController');
+        Route::resource('/article', 'ArticleController');
+        Route::resource('/feedback', 'FeedbackController');
+        Route::resource('/link', 'LinkController');
     });
 });
 

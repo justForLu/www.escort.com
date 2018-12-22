@@ -6,4 +6,5 @@
 <script src="{{asset("/assets/admin/js/dashboard.js")}}"></script>
 <script src="{{asset("/assets/plugins/validate/Validform_v5.3.2_min.js")}}"></script>
 <script src="{{asset("/assets/plugins/layer/layer.js")}}"></script>
+<script src="{{asset("/assets/plugins/weui/lrz.min.js")}}"></script>
 <script src="{{asset("/assets/admin/js/app.js")}}"></script>

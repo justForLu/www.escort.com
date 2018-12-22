@@ -74,7 +74,7 @@ class PermissionController extends BaseController
      * Store a newly created resource in storage.
      *
      * @param PermissionRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(PermissionRequest $request)
     {
@@ -127,9 +127,9 @@ class PermissionController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param PermissionRequest|Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param PermissionRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(PermissionRequest $request, $id)
     {
@@ -141,8 +141,8 @@ class PermissionController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {

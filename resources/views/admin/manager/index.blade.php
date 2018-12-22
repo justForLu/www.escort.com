@@ -7,8 +7,8 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{!!route('admin.manager.index')!!}">系统管理</a></li>
-                <li class="breadcrumb-item active" aria-current="page">管理员管理</li>
+                <li class="breadcrumb-item"><a href="{!!route('admin.manager.index')!!}">管理员管理</a></li>
+                <li class="breadcrumb-item active" aria-current="page">管理员列表</li>
             </ol>
         </nav>
     </div>
@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-toolbar-item">
-                        @can('manager.create')<a href="{!!route('admin.manager.create')!!}" class="btn btn-success btn-fw" title="添加管理员"><i class="mdi mdi-plus"></i>创建管理员</a>@endcan
+                        @can('manager.create')<a href="{!!route('admin.manager.create')!!}" class="btn btn-success btn-fw"><i class="mdi mdi-plus"></i>创建管理员</a>@endcan
                     </div>
                 </div>
                 <div class="card-body">

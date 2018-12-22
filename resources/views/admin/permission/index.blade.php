@@ -7,8 +7,8 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">系统管理</a></li>
-                <li class="breadcrumb-item active" aria-current="page">权限管理</li>
+                <li class="breadcrumb-item"><a href="{!!route('admin.permission.index')!!}">权限管理</a></li>
+                <li class="breadcrumb-item active" aria-current="page">权限列表</li>
             </ol>
         </nav>
     </div>
@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-toolbar-item">
-                        @can('permission.create')<a href="{!!route('admin.permission.create')!!}" class="btn btn-success btn-fw" title="添加权限"><i class="mdi mdi-plus"></i>创建权限</a>@endcan
+                        @can('permission.create')<a href="{!!route('admin.permission.create')!!}" class="btn btn-success btn-fw"><i class="mdi mdi-plus"></i>创建权限</a>@endcan
                     </div>
                 </div>
                 <div class="card-body">
@@ -52,7 +52,7 @@
                                 <td>{{$data->menu->name or ''}}</td>
                                 <td>{{$data->code}}</td>
                                 <td>
-                                    @can('permission.edit')<a href="{!!route('admin.permission.edit',array($data->id))!!}" class="btn btn-success btn-xs J_layer_dialog"><i class="mdi mdi-grease-pencil"></i>编辑</a>@endcan
+                                    @can('permission.edit')<a href="{!!route('admin.permission.edit',array($data->id))!!}" class="btn btn-success btn-xs"><i class="mdi mdi-grease-pencil"></i>编辑</a>@endcan
                                     @can('permission.destroy')<a href="{!!route('admin.permission.destroy',array($data->id))!!}" class="btn btn-danger btn-xs J_layer_dialog_del" data-token="{{csrf_token()}}"><i class="mdi mdi-delete-variant"></i>删除</a>@endcan
                                 </td>
                             </tr>

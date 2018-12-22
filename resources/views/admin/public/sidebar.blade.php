@@ -8,11 +8,11 @@
         </li>
         @if(isset($userMenus))
             @foreach($userMenus as $menu1)
-                <li @if(isset($menu1->active))class="nav-link active"@else class="nav-item"@endif>
+                <li @if(isset($menu1->active))class="nav-item active"@else class="nav-item"@endif>
                     <a class="nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="ui-basic" @if(isset($menu1->children))href="#{{$menu1->code}}"@endif>
                         <span class="menu-title">{{$menu1->name}}</span>
                         <i class="menu-arrow"></i>
-                        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        <i class="{{$menu1->icon}}"></i>
                     </a>
                     @if(isset($menu1->children))
                         <div class="collapse" id="{{$menu1->code}}">

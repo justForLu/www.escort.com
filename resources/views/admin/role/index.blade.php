@@ -7,8 +7,8 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">系统管理</a></li>
-                <li class="breadcrumb-item active" aria-current="page">角色管理</li>
+                <li class="breadcrumb-item"><a href="{!!route('admin.role.index')!!}">角色管理</a></li>
+                <li class="breadcrumb-item active" aria-current="page">角色列表</li>
             </ol>
         </nav>
     </div>
@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-toolbar-item">
-                        @can('role.create')<a href="{!!route('admin.role.create')!!}" class="btn btn-success btn-fw" title="添加角色"><i class="mdi mdi-plus"></i>创建角色</a>@endcan
+                        @can('role.create')<a href="{!!route('admin.role.create')!!}" class="btn btn-success btn-fw"><i class="mdi mdi-plus"></i>创建角色</a>@endcan
                     </div>
                 </div>
                 <div class="card-body">
@@ -56,7 +56,7 @@
                                 <td>{{\App\Enums\BoolEnum::getDesc($data->is_system)}}</td>
                                 <td>{{$data->gmt_create}}</td>
                                 <td>
-                                    @can('role.edit')<a href="{!!route('admin.role.edit',array($data->id))!!}" class="btn btn-success btn-xs J_layer_dialog" title="编辑"><i class="mdi mdi-grease-pencil"></i> 编辑</a>@endcan
+                                    @can('role.edit')<a href="{!!route('admin.role.edit',array($data->id))!!}" class="btn btn-success btn-xs" title="编辑"><i class="mdi mdi-grease-pencil"></i> 编辑</a>@endcan
                                     @if(!$data->is_system)
                                         @if($data->parent == Auth::user()->roles[0]->id)
                                             @can('role.authority')<a href="{{url('admin/role/authority',array($data->id))}}" class="btn btn-info btn-xs layui-btn-normal" title="授权"><i class="mdi mdi-checkbox-marked"></i>授权</a>@endcan

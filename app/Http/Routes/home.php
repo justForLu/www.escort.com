@@ -24,17 +24,17 @@ Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
     Route::group(['middleware'=>'api'],function (){
         Route::any('/course/index','CourseController@index');
         Route::any('/course/details/{id}','CourseController@details');
-        Route::any('/news/index','NewsController@index');
-        Route::any('/news/details/{id}','NewsController@details');
-        Route::any('/news/mall','NewsController@mall');
+        Route::any('/news/index','ConfigController@index');
+        Route::any('/news/details/{id}','ConfigController@details');
+        Route::any('/news/mall','ConfigController@mall');
 
         Route::any('/check_category/index','CheckCategoryController@index');
         Route::any('/check_category/details/{id}','CheckCategoryController@details');
         Route::any('/check_content/index/{id}','CheckContentController@index');
         Route::any('/check_content/details','CheckContentController@details');
         Route::any('/check_content/null','CheckContentController@null');
-        Route::any('/collect_news','NewsController@collect_news');
-        Route::any('/get_collect_news','NewsController@get_collect_news');
-        Route::any('/getUserInfo','NewsController@getUserInfo');
+        Route::any('/collect_news','ConfigController@collect_news');
+        Route::any('/get_collect_news','ConfigController@get_collect_news');
+        Route::any('/getUserInfo','ConfigController@getUserInfo');
     });
 });

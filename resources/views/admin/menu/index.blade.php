@@ -7,8 +7,8 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">系统管理</a></li>
-                <li class="breadcrumb-item active" aria-current="page">菜单管理</li>
+                <li class="breadcrumb-item"><a href="{!!route('admin.menu.index')!!}">菜单管理</a></li>
+                <li class="breadcrumb-item active" aria-current="page">菜单列表</li>
             </ol>
         </nav>
     </div>
@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-toolbar-item">
-                        @can('menu.create')<a href="{!!route('admin.menu.create')!!}" class="btn btn-success btn-fw" title="添加菜单"><i class="mdi mdi-plus"></i>创建菜单</a>@endcan
+                        @can('menu.create')<a href="{!!route('admin.menu.create')!!}" class="btn btn-success btn-fw"><i class="mdi mdi-plus"></i>创建菜单</a>@endcan
                     </div>
                 </div>
                 <div class="card-body">
@@ -56,7 +56,7 @@
                                 <td>{{$data->grade}}</td>
                                 <td>{{\App\Enums\BasicEnum::getDesc($data->status)}}</td>
                                 <td>
-                                    @can('menu.edit')<a href="{!!route('admin.menu.edit',array($data->id))!!}" class="btn btn-success btn-xs J_layer_dialog"><i class="mdi mdi-grease-pencil"></i>编辑</a>@endcan
+                                    @can('menu.edit')<a href="{!!route('admin.menu.edit',array($data->id))!!}" class="btn btn-success btn-xs"><i class="mdi mdi-grease-pencil"></i>编辑</a>@endcan
                                     @can('menu.destroy')<a href="{!!route('admin.menu.destroy',array($data->id))!!}" class="btn btn-danger btn-xs J_layer_dialog_del" data-token="{{csrf_token()}}"><i class="mdi mdi-delete-variant"></i>删除</a>@endcan
                                 </td>
                             </tr>

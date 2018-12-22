@@ -90,8 +90,8 @@ class RoleController extends BaseController
     /**
      * Store a newly created resource in storage.
      *
-     * @param RoleRequest|Request $request
-     * @return \Illuminate\Http\Response
+     * @param RoleRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(RoleRequest $request)
     {
@@ -149,9 +149,9 @@ class RoleController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param RoleRequest|Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param RoleRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(RoleRequest $request, $id)
     {
@@ -169,8 +169,8 @@ class RoleController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
