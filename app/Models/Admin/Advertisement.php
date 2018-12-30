@@ -4,10 +4,10 @@ namespace App\Models\Admin;
 
 use App\Models\Base;
 
-class Ad extends Base
+class Advertisement extends Base
 {
     // 模型对应表名
-    protected $table = 'ad';
+    protected $table = 'advertisement';
 
     protected $fillable = ['name','image','url','position','sort','remarks','status','gmt_update','gmt_create'];
 

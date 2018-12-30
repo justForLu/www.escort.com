@@ -19,6 +19,7 @@
                     <div class="card-body">
                         <form method="post" class="forms-sample J_ajaxForm" action="{!!route('admin.link.update', array('id' => $link['id']))!!}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="id" value="{{$link->id}}">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">友情链接标题</label>

@@ -4,12 +4,12 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="display-4">
-                编辑文章
+                新增文章
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{!!route('admin.article.index')!!}">文章管理</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">编辑文章</li>
+                    <li class="breadcrumb-item"><a href="{!!route('admin.ad.index')!!}">文章管理</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">新增文章</li>
                 </ol>
             </nav>
         </div>
@@ -17,33 +17,30 @@
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" class="forms-sample J_ajaxForm" action="{!!route('admin.article.update', array('id' => $article['id']))!!}">
+                        <form method="post" class="forms-sample J_ajaxForm" action="{!!route('admin.article.store')!!}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="hidden" name="_method" value="PUT">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">文章标题</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="title" value="{{$article->title}}" class="form-control" placeholder="文章标题">
+                                    <input type="text" name="title" class="form-control" placeholder="文章标题">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">文章位置</label>
                                 <div class="col-sm-9">
-                                    {{\App\Enums\ArticleEnum::enumSelect($article->position,false,'position')}}
+                                    {{\App\Enums\ArticleEnum::enumSelect(\App\Enums\ArticleEnum::AGREEMENT,false,'position')}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">状态</label>
                                 <div class="col-sm-9">
-                                    {{\App\Enums\BasicEnum::enumSelect($article->status,false,'status')}}
+                                    {{\App\Enums\BasicEnum::enumSelect(\App\Enums\BasicEnum::ACTIVE,false,'status')}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">文章内容</label>
                                 <div class="col-sm-9">
-                                    <script type="text/plain" name="content" id="editor" style="font-size:10px;width:100%;height:400px;">
-                                        <?php echo $article->content ?>
-                                    </script>
+                                    <script type="text/plain" name="content" id="editor" style="width:100%;height:400px;"></script>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -176,3 +173,4 @@
 
     </script>
 @endsection
+

@@ -42,10 +42,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
         Route::post('/file/uploadPic','FileController@uploadPic');
         Route::post('/file/uploadFile','FileController@uploadFile');
         Route::resource('/config', 'ConfigController');
-        Route::resource('/ad', 'AdController');
+        Route::resource('/advertisement', 'AdvertisementController');
         Route::resource('/article', 'ArticleController');
         Route::resource('/feedback', 'FeedbackController');
         Route::resource('/link', 'LinkController');
+        Route::resource('/user', 'UserController');
+        Route::resource('/escort', 'EscortController');
+        Route::resource('/order', 'OrderController');
+        Route::resource('/appointment', 'AppointmentController');
+        Route::resource('/cash', 'CashController');
+        Route::resource('/cash_config', 'CashConfigController');
+        Route::resource('/evaluate', 'EvaluateController');
     });
 });
 

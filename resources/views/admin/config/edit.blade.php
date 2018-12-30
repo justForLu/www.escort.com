@@ -19,6 +19,7 @@
                     <div class="card-body">
                         <form method="post" class="forms-sample J_ajaxForm" action="{!!route('admin.config.update',array('id'=>1))!!}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_method" value="PUT">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">网站名称</label>
                                 <div class="col-sm-9">

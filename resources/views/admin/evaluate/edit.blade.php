@@ -23,7 +23,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">文章标题</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="title" value="{{$article->title}}" class="form-control" placeholder="文章标题">
+                                    <input type="text" name="name" value="{{$article->title}}" class="form-control" placeholder="文章标题">
                                 </div>
                             </div>
                             <div class="form-group row">

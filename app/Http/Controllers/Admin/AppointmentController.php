@@ -2,26 +2,26 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Admin\Ad;
-use App\Http\Requests\Admin\AdRequest;
-use App\Repositories\Admin\Criteria\AdCriteria;
-use App\Repositories\Admin\AdRepository;
+use App\Models\Admin\Appointment;
+use App\Http\Requests\Admin\AppointmentRequest;
+use App\Repositories\Admin\Criteria\AppointmentCriteria;
+use App\Repositories\Admin\AppointmentRepository;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Config;
 
-class AdController extends BaseController
+class AppointmentController extends BaseController
 {
     /**
-     * @var AdRepository
+     * @var AppointmentRepository
      */
-    protected $ad;
+    protected $appointment;
 
-    public function __construct(AdRepository $ad)
+    public function __construct(AppointmentRepository $appointment)
     {
         parent::__construct();
 
-        $this->ad = $ad;
+        $this->appointment = $appointment;
     }
 
     /**
@@ -34,11 +34,11 @@ class AdController extends BaseController
     {
         $params = $request->all();
 
-        $this->ad->pushCriteria(new AdCriteria($params));
+        $this->appointment->pushCriteria(new AppointmentCriteria($params));
 
-        $list = $this->ad->paginate(Config::get('admin.page_size',10));
+        $list = $this->appointment->paginate(Config::get('admin.page_size',10));
 
-        return view('admin.ad.index',compact('params','list'));
+        return view('admin.appointment.index',compact('params','list'));
     }
 
     /**
@@ -49,23 +49,23 @@ class AdController extends BaseController
     public function create()
     {
 
-        return view('admin.ad.create');
+        return view('admin.appointment.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param AdRequest $request
+     * @param AppointmentRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(AdRequest $request)
+    public function store(AppointmentRequest $request)
     {
         $data = $request->filterAll();
 
-        $result = $this->ad->create($data);
+        $result = $this->appointment->create($data);
 
         if($result){
-            return $this->ajaxSuccess(null,'添加成功',route('admin.ad.index'));
+            return $this->ajaxSuccess(null,'添加成功',route('admin.appointment.index'));
         }else{
             return $this->ajaxError('添加失败');
         }
@@ -79,15 +79,9 @@ class AdController extends BaseController
      */
     public function show($id)
     {
-        $ad = $this->ad->find($id);
-        $ad->image_path = array_values(FileController::getFilePath($ad->image));
-        if($ad->image_path){
-            $ad->image = $ad->image_path[0];
-        }else{
-            $ad->image = '';
-        }
+        $appointment = $this->appointment->find($id);
 
-        return view('admin.ad.show',compact('ad'));
+        return view('admin.appointment.show',compact('appointment'));
     }
 
     /**
@@ -99,25 +93,25 @@ class AdController extends BaseController
      */
     public function edit($id,Request $request)
     {
-        $ad = $this->ad->find($id);
-        $ad->image_path = array_values(FileController::getFilePath($ad->image));
-        return view('admin.ad.edit',compact('ad'));
+        $appointment = $this->appointment->find($id);
+
+        return view('admin.appointment.edit',compact('appointment'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param AdRequest $request
+     * @param AppointmentRequest $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(AdRequest $request, $id)
+    public function update(AppointmentRequest $request, $id)
     {
         $data = $request->filterAll();
 
-        $result = $this->ad->update($data,$id);
+        $result = $this->appointment->update($data,$id);
 
-        return $this->ajaxAuto($result,'修改',route('admin.ad.index'));
+        return $this->ajaxAuto($result,'修改',route('admin.appointment.index'));
     }
 
     /**
@@ -129,7 +123,7 @@ class AdController extends BaseController
     public function destroy($id)
     {
 
-        $result = $this->ad->delete($id);
+        $result = $this->appointment->delete($id);
 
         return $this->ajaxAuto($result,'删除');
     }
