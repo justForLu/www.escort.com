@@ -24,7 +24,6 @@ class RoleRequest extends Request
     public function rules()
     {
         return [
-            'name'  => 'required',
         ];
     }
 
@@ -34,7 +33,6 @@ class RoleRequest extends Request
     public function messages()
     {
         return  [
-            'name.required' => '角色名称必填',
         ];
     }
 

@@ -101,7 +101,7 @@ class ManagerController extends BaseController
 
             if($flag && $flag1){
                 DB::commit();
-                return $this->ajaxSuccess(null,'添加成功');
+                return $this->ajaxSuccess(null,'添加成功',route('admin.manager.index'));
             }else{
                 DB::rollBack();
                 return $this->ajaxError('添加失败');
@@ -183,7 +183,7 @@ class ManagerController extends BaseController
 
                 if($flag !== false){
                     DB::commit();
-                    return $this->ajaxSuccess(null,'更新成功');
+                    return $this->ajaxSuccess(null,'更新成功',route('admin.manager.index'));
                 }else{
                     DB::rollBack();
                     return $this->ajaxError('更新失败');

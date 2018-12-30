@@ -65,7 +65,7 @@ class AdvertisementController extends BaseController
         $result = $this->advertisement->create($data);
 
         if($result){
-            return $this->ajaxSuccess(null,'添加成功',route('admin.ad.index'));
+            return $this->ajaxSuccess(null,'添加成功',route('admin.advertisement.index'));
         }else{
             return $this->ajaxError('添加失败');
         }
@@ -79,15 +79,15 @@ class AdvertisementController extends BaseController
      */
     public function show($id)
     {
-        $ad = $this->advertisement->find($id);
-        $ad->image_path = array_values(FileController::getFilePath($ad->image));
-        if($ad->image_path){
-            $ad->image = $ad->image_path[0];
+        $advertisement = $this->advertisement->find($id);
+        $advertisement->image_path = array_values(FileController::getFilePath($advertisement->image));
+        if($advertisement->image_path){
+            $advertisement->image = $advertisement->image_path[0];
         }else{
-            $ad->image = '';
+            $advertisement->image = '';
         }
 
-        return view('admin.advertisement.show',compact('ad'));
+        return view('admin.advertisement.show',compact('advertisement'));
     }
 
     /**
@@ -99,9 +99,9 @@ class AdvertisementController extends BaseController
      */
     public function edit($id,Request $request)
     {
-        $ad = $this->advertisement->find($id);
-        $ad->image_path = array_values(FileController::getFilePath($ad->image));
-        return view('admin.advertisement.edit',compact('ad'));
+        $advertisement = $this->advertisement->find($id);
+        $advertisement->image_path = array_values(FileController::getFilePath($advertisement->image));
+        return view('admin.advertisement.edit',compact('advertisement'));
     }
 
     /**
@@ -117,7 +117,7 @@ class AdvertisementController extends BaseController
 
         $result = $this->advertisement->update($data,$id);
 
-        return $this->ajaxAuto($result,'修改',route('admin.ad.index'));
+        return $this->ajaxAuto($result,'修改',route('admin.advertisement.index'));
     }
 
     /**

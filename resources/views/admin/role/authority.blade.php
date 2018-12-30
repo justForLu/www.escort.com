@@ -17,10 +17,11 @@
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" class="forms-sample J_ajaxForm" action="{!!route('admin.role.store')!!}">
+                        <form method="post" class="forms-sample J_ajaxForm" action="{{url('admin/role/authority')}}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="role_id" value="{{ $params['role_id'] }}">
-                            <table class="table table-bordered">
+
+                            <table class="table table-bordered J_check_wrap">
                                 <thead>
                                 <tr>
                                     <col width="20%"/>
@@ -55,7 +56,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <ul class="auth-ul">
+                                                    <ul class="auth-ul permission-list" style="list-style: none;">
                                                         @foreach($menu1->permissions as $permission)
                                                             <li class="length3">
                                                                 <label class="{{$permission->active}}"><input type="checkbox" name="permissions[]" class="J_check" value="{{$permission->id}}"
@@ -71,7 +72,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="form-group row">
+                            <div class="form-group row" style="margin-top: 30px;">
                                 <label class="col-sm-3 col-form-label"></label>
                                 <button type="submit" class="btn btn-gradient-primary mr-2 J_ajax_submit_btn">提交</button>
                                 <a href="{!! route('admin.role.index') !!}" class="btn btn-light">取消</a>

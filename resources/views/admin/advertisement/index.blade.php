@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="main-toolbar-item">
-                        @can('ad.create')<a href="{!!route('admin.advertisement.create')!!}" class="btn btn-success btn-fw"><i class="mdi mdi-plus"></i>创建广告</a>@endcan
+                        @can('advertisement.create')<a href="{!!route('admin.advertisement.create')!!}" class="btn btn-success btn-fw"><i class="mdi mdi-plus"></i>创建广告</a>@endcan
                     </div>
                 </div>
                 <div class="card-body">
@@ -61,8 +61,8 @@
                                 <td>{{$data->sort}}</td>
                                 <td>{{\App\Enums\BasicEnum::getDesc($data->status)}}</td>
                                 <td>
-                                    @can('ad.edit')<a href="{!!route('admin.advertisement.edit',array($data->id))!!}" class="btn btn-success btn-xs"><i class="mdi mdi-grease-pencil"></i>编辑</a>@endcan
-                                    @can('ad.destroy')<a href="{!!route('admin.advertisement.destroy',array($data->id))!!}" class="btn btn-danger btn-xs J_layer_dialog_del" data-token="{{csrf_token()}}"><i class="mdi mdi-delete-variant"></i>删除</a>@endcan
+                                    @can('advertisement.edit')<a href="{!!route('admin.advertisement.edit',array($data->id))!!}" class="btn btn-success btn-xs"><i class="mdi mdi-grease-pencil"></i>编辑</a>@endcan
+                                    @can('advertisement.destroy')<a href="{!!route('admin.advertisement.destroy',array($data->id))!!}" class="btn btn-danger btn-xs J_layer_dialog_del" data-token="{{csrf_token()}}"><i class="mdi mdi-delete-variant"></i>删除</a>@endcan
                                 </td>
                             </tr>
                         @endforeach

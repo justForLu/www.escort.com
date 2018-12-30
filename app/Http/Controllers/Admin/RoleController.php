@@ -97,6 +97,10 @@ class RoleController extends BaseController
     {
         $data = $request->filterAll();
 
+        if(empty($data['name'])){
+            return $this->ajaxError('请输入角色名称');
+        }
+
         $data = $this->role->create($data);
 
         if($data){
@@ -156,6 +160,11 @@ class RoleController extends BaseController
     public function update(RoleRequest $request, $id)
     {
         $data = $request->filterAll();
+
+        if(empty($data['name'])){
+            return $this->ajaxError('请输入角色名称');
+        }
+
         $parentData = $this->role->findBy('id', $data['parent']);
 
         if($parentData){
@@ -200,6 +209,7 @@ class RoleController extends BaseController
             $params['is_system'] = BoolEnum::NO;
 
             $permissions = $menu_ids = array();
+
             if(Auth::user()->is_system == BoolEnum::NO){
                 // 非系统角色只能分配当前角色所有的权限,找出登录用户的角色信息
                 $roles = Auth::user()->roles;
@@ -274,6 +284,9 @@ class RoleController extends BaseController
             });
 
             $result = is_null($exception) ? true : false;
+            if($result){
+                return $this->ajaxAuto($result,'提交', route('admin.role.index'));
+            }
             return $this->ajaxAuto($result,'提交');
         }
     }

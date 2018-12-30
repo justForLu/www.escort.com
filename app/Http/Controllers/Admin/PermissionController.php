@@ -83,7 +83,7 @@ class PermissionController extends BaseController
         $data = $this->permission->create($data);
 
         if($data){
-            return $this->ajaxSuccess(null,'添加成功');
+            return $this->ajaxSuccess(null,'添加成功',route('admin.manager.index'));
         }else{
             return $this->ajaxError('添加失败');
         }
