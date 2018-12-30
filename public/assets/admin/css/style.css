@@ -56,6 +56,18 @@
 /* === Import template variables === */
 /*-------------------------------------------------------------------*/
 /* === SCSS Compass Functions === */
+/*  我添加的  */
+#public-pages .pull-right li{
+  line-height: 1.8;
+  padding: 5px 15px;
+  border: 1px #ececec solid;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+#public-pages .pull-right li.active{
+  background-color: #007bff;
+  color: #fff;
+}
 .stretch-card .card .card-body .main-toolbar-item{
   text-align: right;
 }

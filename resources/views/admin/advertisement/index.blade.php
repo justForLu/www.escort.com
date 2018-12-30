@@ -26,6 +26,12 @@
                             <div class="col-sm-2">
                                 <input type="text" name="name" class="form-control" placeholder="广告名称" value="{{ isset($params['name']) ?  $params['name'] : ''}}">
                             </div>
+                            <div class="col-sm-2">
+                                {{\App\Enums\BasicEnum::enumSelect(isset($params['position']) ? $params['position'] : null,'选择位置','position')}}
+                            </div>
+                            <div class="col-sm-2">
+                                {{\App\Enums\BasicEnum::enumSelect(isset($params['status']) ? $params['status'] : null,'选择状态','status')}}
+                            </div>
                             <div class="col-sm-1">
                                 <button type="submit" id="search-btn" class="btn btn-success btn-fw"><i class="mdi mdi-magnify-plus"></i>查询</button>
                             </div>
@@ -61,10 +67,11 @@
                             </tr>
                         @endforeach
                         </tbody>
-                        @include('admin.public.pages')
                     </table>
+                    @include('admin.public.pages')
                 </div>
             </div>
         </div>
     </div>
+
 @endsection

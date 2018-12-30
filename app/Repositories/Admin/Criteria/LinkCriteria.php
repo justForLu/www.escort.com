@@ -21,9 +21,15 @@ class LinkCriteria extends Criteria {
     public function apply($model, Repository $repository)
     {
 
+        if(isset($this->conditions['title']) && !empty($this->conditions['title'])){
+            $model = $model->where('title', 'like','%' . $this->conditions['title'] . '%');
+        }
+
         if(isset($this->conditions['status']) && !empty($this->conditions['status'])){
             $model = $model->where('status', '=',$this->conditions['status']);
         }
+
+        $model = $model->orderBy('sort','ASC');
 
         $model = $model->orderBy('id','DESC');
 

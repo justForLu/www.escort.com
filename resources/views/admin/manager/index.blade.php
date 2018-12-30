@@ -70,8 +70,8 @@
                         </tr>
                         @endforeach
                         </tbody>
-                        @include('admin.public.pages')
                     </table>
+                    @include('admin.public.pages')
                 </div>
             </div>
         </div>

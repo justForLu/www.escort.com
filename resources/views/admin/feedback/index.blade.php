@@ -22,6 +22,15 @@
                             <div class="col-sm-2">
                                 <input type="text" name="name" class="form-control" placeholder="姓名" value="{{ isset($params['name']) ?  $params['name'] : ''}}">
                             </div>
+                            <div class="col-sm-2">
+                                <input type="text" name="mobile" class="form-control" placeholder="手机号" value="{{ isset($params['mobile']) ?  $params['mobile'] : ''}}">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" name="email" class="form-control" placeholder="邮箱" value="{{ isset($params['email']) ?  $params['email'] : ''}}">
+                            </div>
+                            <div class="col-sm-2">
+                                {{\App\Enums\FeedbackEnum::enumSelect(isset($params['status']) ? $params['status'] : null,'选择状态','status')}}
+                            </div>
                             <div class="col-sm-1">
                                 <button type="submit" id="search-btn" class="btn btn-success btn-fw"><i class="mdi mdi-magnify-plus"></i>查询</button>
                             </div>
@@ -55,8 +64,8 @@
                             </tr>
                         @endforeach
                         </tbody>
-                        @include('admin.public.pages')
                     </table>
+                    @include('admin.public.pages')
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@ class ManagerCriteria extends Criteria {
      */
     public function apply($model, Repository $repository)
     {
-        if(isset($this->conditions['username'])){
+        if(isset($this->conditions['username']) && !empty($this->conditions['username'])){
             $model = $model->where('username', 'like','%' . $this->conditions['username'] . '%');
         }
 

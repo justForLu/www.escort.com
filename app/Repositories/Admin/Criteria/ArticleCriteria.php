@@ -20,6 +20,13 @@ class ArticleCriteria extends Criteria {
      */
     public function apply($model, Repository $repository)
     {
+        if(isset($this->conditions['title']) && !empty($this->conditions['title'])){
+            $model = $model->where('title', 'like','%' . $this->conditions['title'] . '%');
+        }
+
+        if(isset($this->conditions['position']) && !empty($this->conditions['position'])){
+            $model = $model->where('position', '=',$this->conditions['position']);
+        }
 
         if(isset($this->conditions['status']) && !empty($this->conditions['status'])){
             $model = $model->where('status', '=',$this->conditions['status']);

@@ -15,7 +15,7 @@
                         <i class="{{$menu1->icon}}"></i>
                     </a>
                     @if(isset($menu1->children))
-                        <div class="collapse" id="{{$menu1->code}}">
+                        <div @if(isset($menu1->active))class="collapse show"@else class="collapse"@endif id="{{$menu1->code}}">
                             <ul class="nav flex-column sub-menu">
                                 @foreach($menu1->children as $menu2)
                                 <li class="nav-item">
