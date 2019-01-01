@@ -16,7 +16,7 @@
                     <div id="register"  @if($type == 'register')class="tab-pane active in" @else class="tab-pane" @endif>
                         <div class="login-inner">
                             <div class="login-form">
-                                <form  method="post" action="{{url('home/post_register')}}">
+                                <form method="post" class="J_ajaxForm" action="{{url('home/post_register')}}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-details">
                                         <label class="user">
@@ -32,7 +32,7 @@
                                             <input type="password" name="password_confirmation" placeholder="请再次输入密码">
                                         </label>
                                     </div>
-                                    <button type="submit" class="form-btn" onsubmit="">注册</button>
+                                    <button type="submit" class="form-btn J_ajax_submit_btn" onsubmit="">注册</button>
                                 </form>
                             </div>
                         </div>
@@ -40,17 +40,17 @@
                     <div id="login" @if($type == 'login')class="tab-pane fade in active"@else class="tab-pane fade" @endif>
                         <div class="login-inner">
                             <div class="login-form">
-                                <form method="post" action="{{url('home/post_login')}}">
+                                <form method="post" class="J_ajaxForm" action="{{url('home/post_login')}}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-details">
                                         <label class="user">
                                             <input type="text" name="username" placeholder="请输入用户名">
                                         </label>
                                         <label class="pass">
-                                            <input type="password" name="passsword" placeholder="请输入密码">
+                                            <input type="password" name="password" placeholder="请输入密码">
                                         </label>
                                     </div>
-                                    <button type="submit" class="form-btn" onsubmit="">登录</button>
+                                    <button type="submit" class="form-btn J_ajax_submit_btn" onsubmit="">登录</button>
                                     <p>
                                         <a href="{!! url('/home/user/find_password') !!}" style="color: #F5EAFA;">找回密码</a>
                                     </p>
