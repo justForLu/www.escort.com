@@ -52,5 +52,41 @@ class UserController extends BaseController
 
     }
 
+    /**
+     * 找回密码页面
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function findPassword(Request $request){
+        $params = $request->all();
+
+        //找回密码第一步
+        if(!isset($params['step'])){
+            $params['step'] = 1;
+
+            return view('home.user.password', compact('params'));
+        }
+        //找回密码第二步
+        if(isset($params['step']) && $params['step'] == 2){
+            return view('home.user.password', compact('params'));
+        }
+
+    }
+
+    /**
+     * 更改密码操作
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function resetPassword(Request $request){
+        $data = $request->all();
+
+
+        $result = 1;
+
+        return $this->ajaxAuto($result, '更改密码', url('/home/login'));
+    }
 
 }

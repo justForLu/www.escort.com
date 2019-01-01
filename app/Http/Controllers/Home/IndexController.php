@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Home;
 
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends BaseController
 {

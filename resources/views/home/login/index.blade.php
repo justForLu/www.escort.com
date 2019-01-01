@@ -7,16 +7,16 @@
                 <div class="login-header">
                     <div class="login-details">
                         <ul class="nav nav-tabs navbar-right">
-                            <li><a data-toggle="tab" href="#register">注册</a></li>
-                            <li class="active"><a data-toggle="tab" href="#login">登录</a></li>
+                            <li @if($type == 'register')class="active"@endif><a data-toggle="tab" href="#register">注册</a></li>
+                            <li @if($type == 'login')class="active"@endif><a data-toggle="tab" href="#login">登录</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="tab-content">
-                    <div id="register" class="tab-pane">
+                    <div id="register"  @if($type == 'register')class="tab-pane active in" @else class="tab-pane" @endif>
                         <div class="login-inner">
                             <div class="login-form">
-                                <form  method="post" action="{{url('home/register')}}">
+                                <form  method="post" action="{{url('home/post_register')}}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-details">
                                         <label class="user">
@@ -37,10 +37,10 @@
                             </div>
                         </div>
                     </div>
-                    <div id="login" class="tab-pane fade in active">
+                    <div id="login" @if($type == 'login')class="tab-pane fade in active"@else class="tab-pane fade" @endif>
                         <div class="login-inner">
                             <div class="login-form">
-                                <form method="post" action="{{url('home/login')}}">
+                                <form method="post" action="{{url('home/post_login')}}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-details">
                                         <label class="user">
@@ -52,7 +52,7 @@
                                     </div>
                                     <button type="submit" class="form-btn" onsubmit="">登录</button>
                                     <p>
-                                        <a href="#" style="color: #F5EAFA;">找回密码</a>
+                                        <a href="{!! url('/home/user/find_password') !!}" style="color: #F5EAFA;">找回密码</a>
                                     </p>
                                 </form>
                             </div>

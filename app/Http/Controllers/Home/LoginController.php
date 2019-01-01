@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\LoginRequest;
@@ -62,7 +63,9 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('home.login.index');
+        $type = 'login';
+
+        return view('home.login.index', compact('type'));
     }
 
     /**
@@ -137,12 +140,28 @@ class LoginController extends Controller
 
 
     /**
-     * 用户注册
+     * 用户注册页面
+     *
      * @param RegisterRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function register(RegisterRequest $request)
+    {
+        $type = 'register';
+
+        return view('home.login.index', compact('type'));
+
+    }
+
+    /**
+     * 注册
+     *
+     * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @throws \Illuminate\Foundation\Validation\ValidationException
      */
-    public function register(RegisterRequest $request){
+    public function postRegister(Request $request)
+    {
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
@@ -150,7 +169,6 @@ class LoginController extends Controller
                 $request, $validator
             );
         }
-return $this->ajaxSuccess(gettype($this->create($request->all())));
         Auth::guard($this->getGuard())->login($this->create($request->all()));
 
         return redirect($this->redirectPath());

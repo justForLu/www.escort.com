@@ -10,7 +10,7 @@
  */
 
 /**
- * News.php.
+ * Config.phphp.
  *
  * @author    overtrue <i@overtrue.me>
  * @copyright 2015 overtrue <i@overtrue.me>
@@ -22,7 +22,7 @@
 namespace EasyWeChat\Message;
 
 /**
- * Class News.
+ * Class Config.
  */
 class News extends AbstractMessage
 {

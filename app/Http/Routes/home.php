@@ -20,9 +20,10 @@ Route::get('home', function () {
 
 Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
     Route::get('/login', 'LoginController@index');
-    Route::post('/login', 'LoginController@login');
+    Route::post('/post_login', 'LoginController@login');
 //    Route::get('/register', 'LoginController@register');
-    Route::any('/register', 'LoginController@register');
+    Route::get('/register', 'LoginController@register');
+    Route::post('/post_register', 'LoginController@postRegister');
     Route::get('/logout', 'LoginController@logout');
     Route::any('/index','IndexController@index');
 
@@ -34,6 +35,8 @@ Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
     Route::any('/escort/index','EscortController@index');
     Route::any('/escort/details/{id}','EscortController@detail');
 
+    Route::any('/user/find_password','UserController@findPassword');
+    Route::any('/user/reset_password','UserController@resetPassword');
     Route::any('/user/index','UserController@index');
     Route::any('/user/order','UserController@order');
 

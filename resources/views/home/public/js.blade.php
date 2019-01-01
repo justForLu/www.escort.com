@@ -12,3 +12,7 @@
 <script type="text/javascript" src="{{asset("/assets/home/js/cubeportfolio/team.js")}}"></script>
 <script type="text/javascript" src="{{asset("/assets/home/js/cubeportfolio/blog-grid-3col.js")}}"></script>
 <script type="text/javascript" src="{{asset("/assets/home/js/custom.js")}}"></script>
+<script type="text/javascript" src="{{asset("/assets/plugins/validate/Validform_v5.3.2_min.js")}}"></script>
+<script type="text/javascript" src="{{asset("/assets/plugins/layer/layer.js")}}"></script>
+<script type="text/javascript" src="{{asset("/assets/home/js/app.js")}}"></script>
+

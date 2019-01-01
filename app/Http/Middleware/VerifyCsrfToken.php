@@ -13,7 +13,7 @@ class VerifyCsrfToken extends BaseVerifier
      */
     protected $except = [
         '/notify',
-        '/api',
+        '/home',
         '/soap/*',
         '/admin/file/uploadFile'
     ];

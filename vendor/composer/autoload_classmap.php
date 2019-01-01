@@ -316,7 +316,7 @@ return array(
     'EasyWeChat\\Message\\Location' => $vendorDir . '/overtrue/wechat/src/Message/Location.php',
     'EasyWeChat\\Message\\Material' => $vendorDir . '/overtrue/wechat/src/Message/Material.php',
     'EasyWeChat\\Message\\Music' => $vendorDir . '/overtrue/wechat/src/Message/Music.php',
-    'EasyWeChat\\Message\\News' => $vendorDir . '/overtrue/wechat/src/Message/News.php',
+    'EasyWeChat\\Message\\News' => $vendorDir . '/overtrue/wechat/src/Message/Config.phphp',
     'EasyWeChat\\Message\\Raw' => $vendorDir . '/overtrue/wechat/src/Message/Raw.php',
     'EasyWeChat\\Message\\ShortVideo' => $vendorDir . '/overtrue/wechat/src/Message/ShortVideo.php',
     'EasyWeChat\\Message\\Text' => $vendorDir . '/overtrue/wechat/src/Message/Text.php',
