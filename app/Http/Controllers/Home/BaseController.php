@@ -18,12 +18,7 @@ class BaseController extends Controller
 
         $this->callback = isset($_SERVER['HTTP_REFERER']) ? urlencode($_SERVER['HTTP_REFERER']) : '';
 
-        if(Auth::check()){
-            $userMenus = $this->getUserMenus();
-            $this->currentUser = $this->getCurrentUser();
 
-            view()->share('userMenus',$userMenus);
-        }
         view()->share('callback',$this->callback);
     }
 
