@@ -1,4 +1,4 @@
-@extends('admin.layout.base')
+@extends('home.layout.base')
 
 @section('content')
     <section class="main-contain bg-white login-register">
@@ -16,19 +16,20 @@
                     <div id="register" class="tab-pane">
                         <div class="login-inner">
                             <div class="login-form">
-                                <form>
+                                <form  method="post" action="{{url('home/register')}}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-details">
                                         <label class="user">
                                             <input type="text" name="username" placeholder="请输入手机号">
                                         </label>
                                         <label class="mail">
-                                            <input type="email" name="mail" placeholder="请输入验证码">
+                                            <input type="email" name="email" placeholder="请输入验证码">
                                         </label>
                                         <label class="pass">
-                                            <input type="password" name="passsword" placeholder="请输入密码">
+                                            <input type="password" name="password" placeholder="请输入密码">
                                         </label>
                                         <label class="pass">
-                                            <input type="password" name="passsword" placeholder="请再次输入密码">
+                                            <input type="password" name="password_confirmation" placeholder="请再次输入密码">
                                         </label>
                                     </div>
                                     <button type="submit" class="form-btn" onsubmit="">注册</button>
@@ -39,7 +40,8 @@
                     <div id="login" class="tab-pane fade in active">
                         <div class="login-inner">
                             <div class="login-form">
-                                <form>
+                                <form method="post" action="{{url('home/login')}}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-details">
                                         <label class="user">
                                             <input type="text" name="username" placeholder="请输入用户名">

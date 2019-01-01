@@ -14,7 +14,8 @@ class IndexController extends BaseController
 
     public function index()
     {
-        return redirect('/home/course/index');
+//        return redirect('/home/index');
+        return view('home.index.index');
     }
 
 }

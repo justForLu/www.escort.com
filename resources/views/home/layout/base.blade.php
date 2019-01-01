@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Craftdzine">
-    @include('admin.public.css')
+    @include('home.public.css')
 </head>
 <body>
 <div class="wrapper">
     @yield('content')
 </div>
-@include('admin.public.js')
+@include('home.public.js')
 @yield('scripts')
 </body>
 </html>

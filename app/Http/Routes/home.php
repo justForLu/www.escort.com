@@ -19,22 +19,23 @@ Route::get('home', function () {
 
 
 Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
+    Route::get('/login', 'LoginController@index');
+    Route::post('/login', 'LoginController@login');
+//    Route::get('/register', 'LoginController@register');
+    Route::any('/register', 'LoginController@register');
+    Route::get('/logout', 'LoginController@logout');
     Route::any('/index','IndexController@index');
 
-    Route::group(['middleware'=>'api'],function (){
-        Route::any('/course/index','CourseController@index');
-        Route::any('/course/details/{id}','CourseController@details');
-        Route::any('/news/index','ConfigController@index');
-        Route::any('/news/details/{id}','ConfigController@details');
-        Route::any('/news/mall','ConfigController@mall');
 
-        Route::any('/check_category/index','CheckCategoryController@index');
-        Route::any('/check_category/details/{id}','CheckCategoryController@details');
-        Route::any('/check_content/index/{id}','CheckContentController@index');
-        Route::any('/check_content/details','CheckContentController@details');
-        Route::any('/check_content/null','CheckContentController@null');
-        Route::any('/collect_news','ConfigController@collect_news');
-        Route::any('/get_collect_news','ConfigController@get_collect_news');
-        Route::any('/getUserInfo','ConfigController@getUserInfo');
-    });
+    Route::any('/appointment/index','AppointmentController@index');
+    Route::any('/appointment/list','AppointmentController@search_list');
+    Route::any('/appointment/reserve','AppointmentController@reserve');
+
+    Route::any('/escort/index','EscortController@index');
+    Route::any('/escort/details/{id}','EscortController@detail');
+
+    Route::any('/user/index','UserController@index');
+    Route::any('/user/order','UserController@order');
+
+    Route::any('/article/index/{position}','ArticleController@index');
 });

@@ -531,8 +531,7 @@ ul.list-inline {
 /*--------------[个人中心]-----------*/
 /*------------------------------------------------*/
 .person-box{
-    background-image: url("../images/person-bg.png");width:100%;height:100%;background-size:cover;
-    background-repeat: no-repeat;
+    background-image: url("../images/person-bg.png");no-repeat;width:100%;height:100%;background-size:cover;
     height: 150px;
 }
 .person-box a{
@@ -613,8 +612,7 @@ ul.list-inline {
     color: transparent;
 }
 .person-function{
-    height: 100%;
-    background-color: #fff;
+
 }
 .person-function li{
     line-height: 60px;
@@ -689,6 +687,133 @@ ul.list-inline {
     border-left: none;
     transform: rotate(45deg)
 }
+/*------------------------------------------------*/
+/*--------------[订单]-----------*/
+/*------------------------------------------------*/
+.order-header{
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+.order-header ul li.active{
+
+}
+.order-header ul li{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.order-header ul li a{
+    width: 100%;
+    height: 100%;
+    display: block
+}
+.order-list{
+    margin-top: 10px;
+}
+.order-list ul li{
+    margin: 10px 10px 15px 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 1px 4px #999;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 36vw;
+}
+.order-list .order-img-box{
+    float: left;
+    width: 30%;
+    height: 30vw;
+}
+.order-list .order-img-box img{
+    border-radius: 7px;
+    object-fit: cover;
+    height: 100%;
+}
+.order-list .order-content-box{
+    float: left;
+    padding-left: 10px;
+    width: 65%;
+}
+.order-list .order-content-box p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 7.5vw;
+}
+.order-list .order-content-box .escort-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #AA6DFC;
+}
+.order-list .order-content-box .order-status-icon{
+    color: #fff;
+    font-weight: bold;
+    background-color: #FB9529;
+    padding: 1px 7px;
+    border-radius: 10px;
+}
+.order-list .order-content-box .order-status{
+    color: #AA6DFC;
+    float: right;
+}
+.order-list .order-content-box .order-btn{
+    text-align: right;
+}
+.order-list .order-content-box p a{
+    border: 1px #BABABA solid;
+    padding: 0.6vw 3vw;
+    border-radius: 5vw;
+    margin-left: 10px;
+}
+
+/*------------------------------------------------*/
+/*--------------小姐详情-----------*/
+/*------------------------------------------------*/
+.escort-details{
+    background-color: #E3E3E3;
+}
+.escort-details .escort-img{
+    padding-left: 16px;
+    background-color: #fff;
+}
+.escort-details .escort-img ul li{
+    width: 48%;
+    float: left;
+}
+.escort-details .escort-img ul li img{
+
+}
+.escort-details .escort-service{
+    padding: 10px;
+    background-color: #fff;
+}
+.escort-details .escort-service ul li{
+
+}
+.escort-details .escort-price{
+    padding: 10px;
+    background-color: #fff;
+}
+.escort-details .escort-price ul li{
+
+}
+.escort-details .evaluate-total{
+    padding: 10px;
+    background-color: #fff;
+}
+.escort-details .evaluate-total ul li{
+
+}
+.escort-details .escort-evaluate{
+    padding: 10px;
+    background-color: #fff;
+}
+.escort-details .escort-evaluate ul li{
+
+}
+
 
 /*------------------------------------------------*/
 /*--------------[Title Style 5]-----------*/
@@ -2303,7 +2428,6 @@ table, th, td {
     border-image: none;
     border-style: none none solid;
     border-width: medium medium 1px;
-    font-size: 13px;
     font-weight: 300;
     width: 100%;
     color: inherit;

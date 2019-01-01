@@ -12,5 +12,3 @@
 <script type="text/javascript" src="{{asset("/assets/home/js/cubeportfolio/team.js")}}"></script>
 <script type="text/javascript" src="{{asset("/assets/home/js/cubeportfolio/blog-grid-3col.js")}}"></script>
 <script type="text/javascript" src="{{asset("/assets/home/js/custom.js")}}"></script>
-<script src="respond.js"></script>
-<script src="html5shiv.js"></script>

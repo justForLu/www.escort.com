@@ -41,15 +41,16 @@ return [
             'provider' => 'admin',
         ],
 
+        'home' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
         ],
 
-        'wx' => [
-            'driver' => 'jwt',
-            'provider' => 'users',
-        ],
     ],
 
     /*
@@ -69,10 +70,16 @@ return [
     |
     */
 
+
     'providers' => [
         'admin' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin\Manager::class,
+        ],
+
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Home\User::class,
         ],
 
         // 'users' => [
@@ -80,11 +87,9 @@ return [
         //     'table' => 'users',
         // ],
 
-//         'users' => [
-//             'driver' => 'eloquent',
-//             'model' => App\Models\Hotel\User::class,
-//         ],
     ],
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -110,6 +115,11 @@ return [
             'provider' => 'admin',
             'expire' => 60,
         ],
+
+        'user' => [
+            'provider' => 'users',
+            'expire' => 60
+        ]
     ],
 
 ];

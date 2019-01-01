@@ -62,6 +62,8 @@ class ArticleController extends BaseController
     {
         $data = $request->filterAll();
 
+        $data['content'] = htmlspecialchars_decode($data['content']);
+
         $result = $this->article->create($data);
 
         if($result){
@@ -114,6 +116,8 @@ class ArticleController extends BaseController
     public function update(ArticleRequest $request, $id)
     {
         $data = $request->filterAll();
+
+        $data['content'] = htmlspecialchars_decode($data['content']);
 
         $result = $this->article->update($data,$id);
 

@@ -8,7 +8,7 @@
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{!!route('admin.ad.index')!!}">文章管理</a></li>
+                    <li class="breadcrumb-item"><a href="{!!route('admin.article.index')!!}">文章管理</a></li>
                     <li class="breadcrumb-item active" aria-current="page">新增文章</li>
                 </ol>
             </nav>
