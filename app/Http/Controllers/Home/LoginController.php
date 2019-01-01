@@ -143,13 +143,12 @@ class LoginController extends Controller
      * 用户注册页面
      *
      * @param RegisterRequest $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function register(RegisterRequest $request)
     {
         $type = 'register';
 
-        return view('home.login.index', compact('type'));
+
 
     }
 
