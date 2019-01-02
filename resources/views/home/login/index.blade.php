@@ -20,10 +20,10 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-details">
                                         <label class="user">
-                                            <input type="text" name="username" placeholder="请输入手机号">
+                                            <input type="text" name="mobile" placeholder="请输入手机号">
                                         </label>
                                         <label class="mail">
-                                            <input type="email" name="email" placeholder="请输入验证码">
+                                            <input type="email" name="code" placeholder="请输入验证码">
                                         </label>
                                         <label class="pass">
                                             <input type="password" name="password" placeholder="请输入密码">
@@ -44,7 +44,7 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-details">
                                         <label class="user">
-                                            <input type="text" name="username" placeholder="请输入用户名">
+                                            <input type="text" name="mobile" placeholder="请输入用户名">
                                         </label>
                                         <label class="pass">
                                             <input type="password" name="password" placeholder="请输入密码">

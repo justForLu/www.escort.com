@@ -1,18 +1,13 @@
 <?php
 namespace App\Http\Controllers\Home;
 
-use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\LoginRequest;
-use App\Http\Requests\Home\RegisterRequest;
+use App\Http\Requests\Home\LoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Support\Facades\Auth;
-use App\Repositories\Admin\UserRepository as Users;
+use App\Repositories\Home\UserRepository as Users;
 use Illuminate\Support\Facades\Lang;
-use Illuminate\Foundation\Auth\User as AuthUser;
 
 class LoginController extends Controller
 {
@@ -33,7 +28,7 @@ class LoginController extends Controller
      * 指定用户名字段
      * @var string
      */
-    protected $username = 'username';
+    protected $username = 'mobile';
 
     /**
      * 指定guard
@@ -45,7 +40,6 @@ class LoginController extends Controller
      * @var
      */
     protected $user;
-
 
 
     /**
@@ -75,7 +69,6 @@ class LoginController extends Controller
      */
     public function login(LoginRequest $loginRequest)
     {
-
         $throttles = $this->isUsingThrottlesLoginsTrait();
 
         if ($throttles && $lockedOut = $this->hasTooManyLoginAttempts($loginRequest)) {
@@ -85,6 +78,9 @@ class LoginController extends Controller
         }
 
         $credentials = $this->getCredentials($loginRequest);
+
+        $mobile = $credentials['mobile'];
+        $password = bcrypt($credentials['password']);
 
         if (Auth::guard($this->getGuard())->attempt($credentials, $loginRequest->has('remember'))) {
 
@@ -122,69 +118,4 @@ class LoginController extends Controller
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'username' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:user',
-            'password' => 'required|min:6|confirmed',
-        ]);
-    }
-
-
-
-    /**
-     * 用户注册页面
-     *
-     * @param RegisterRequest $request
-     */
-    public function register(RegisterRequest $request)
-    {
-        $type = 'register';
-
-
-
-    }
-
-    /**
-     * 注册
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     * @throws \Illuminate\Foundation\Validation\ValidationException
-     */
-    public function postRegister(Request $request)
-    {
-        $validator = $this->validator($request->all());
-
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
-        Auth::guard($this->getGuard())->login($this->create($request->all()));
-
-        return redirect($this->redirectPath());
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param array $data
-     * @return mixed
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
 }

@@ -3,11 +3,10 @@
 namespace App\Models\Home;
 
 use App\Models\Base;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Base
+class User extends Authenticatable
 {
-    use SoftDeletes;
     // 模型对应表名
     protected $table = 'user';
 

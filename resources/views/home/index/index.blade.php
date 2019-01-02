@@ -31,7 +31,7 @@
         <div class="cd-home-title">
             <h2>护送点播</h2>
             <p>护送预约平台</p>
-            <a class="btn btn-product" href="">预约护送</a>
+            <a class="btn btn-product" href="{!! url('/home/escort/index') !!}">预约护送</a>
         </div>
     </section>
     <section class="home-main-contant-style bg-white">
@@ -121,7 +121,7 @@
                     </div>
                     <div class="escort-content">
                         <p class="escort-left"><span>￥500</span><span>(2小时)</span></p>
-                        <p class="escort-right"><a class="a-button" href="#">随时预定</a></p>
+                        <p class="escort-right"><a class="a-button" href="{!! url('/home/escort/index') !!}">随时预定</a></p>
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@
                     </div>
                     <div class="escort-content">
                         <p class="escort-left"><span>￥500</span><span>(2小时)</span></p>
-                        <p class="escort-right"><a class="a-button" href="#">随时预定</a></p>
+                        <p class="escort-right"><a class="a-button" href="{!! url('/home/escort/index') !!}">随时预定</a></p>
                     </div>
                 </div>
             </div>
@@ -172,11 +172,11 @@
                     <div class="widget">
                         <h4 class="montserrat text-uppercase bottom-line">城市</h4>
                         <ul class="icons-list">
-                            <li><a href="#">泰国</a>|</li>
-                            <li><a href="#">泰国变性人</a>|</li>
-                            <li><a href="#">菲律宾</a>|</li>
-                            <li><a href="#">菲律宾跨性别者</a>|</li>
-                            <li><a href="#">香港</a></li>
+                            <li><a href="{!! url('/home/escort/index') !!}">泰国</a>|</li>
+                            <li><a href="{!! url('/home/escort/index') !!}">泰国变性人</a>|</li>
+                            <li><a href="{!! url('/home/escort/index') !!}">菲律宾</a>|</li>
+                            <li><a href="{!! url('/home/escort/index') !!}">菲律宾跨性别者</a>|</li>
+                            <li><a href="{!! url('/home/escort/index') !!}">香港</a></li>
                         </ul>
                     </div>
                 </div>
@@ -184,16 +184,16 @@
                     <div class="widget">
                         <h4 class="montserrat text-uppercase bottom-line">关于我们</h4>
                         <ul class="icons-list">
-                            <li><a href="#">隐私协议</a></li>
-                            <li><a href="#">注意事项</a></li>
-                            <li><a href="#">联系我们</a></li>
+                            <li><a href="{!! url('/home/article/index', array(\App\Enums\ArticleEnum::AGREEMENT)) !!}">隐私协议</a></li>
+                            <li><a href="{!! url('/home/article/index', array(\App\Enums\ArticleEnum::CAREFUL)) !!}">注意事项</a></li>
+                            <li><a href="{!! url('/home/article/index', array(\App\Enums\ArticleEnum::CONTACT)) !!}">联系我们</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="copyright">
                 <div class="text-center">
-                    <p>Copyright &copy; DGISO 2018 | contact@dgiso.com</p>
+                    <p>{{$config->copyright}}</p>
                 </div>
             </div>
         </div>

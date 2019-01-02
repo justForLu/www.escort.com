@@ -43,7 +43,7 @@ return [
 
         'home' => [
             'driver' => 'session',
-            'provider' => 'user',
+            'provider' => 'home',
         ],
 
         'api' => [
@@ -77,7 +77,7 @@ return [
             'model' => App\Models\Admin\Manager::class,
         ],
 
-        'user' => [
+        'home' => [
             'driver' => 'eloquent',
             'model' => App\Models\Home\User::class,
             'table' => 'user',
@@ -118,7 +118,7 @@ return [
         ],
 
         'user' => [
-            'provider' => 'user',
+            'provider' => 'home',
             'expire' => 60
         ]
     ],

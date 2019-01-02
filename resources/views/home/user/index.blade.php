@@ -39,7 +39,7 @@
             <ul>
                 <li><a href="#"><i class="fa fa-star fa-2x" style="color: #FF9500;"></i>我的收藏</a><span><i class="fa fa-angle-right fa-2x"></i></span></li>
                 <li><a href="#"><i class="fa fa-th-large fa-2x" style=" content: attr(data-text); background: linear-gradient(to right, #da8cff, #9a55ff); -webkit-background-clip: text; color: transparent;"></i>Escort管理</a><span><i class="fa fa-angle-right fa-2x"></i></span></li>
-                <li><a href="#"><i class="fa fa-question-circle fa-2x" style="color: #FFB400;"></i>帮助中心</a><span><i class="fa fa-angle-right fa-2x"></i></span></li>
+                <li><a href="{!! url("/home/article/index", array(\App\Enums\ArticleEnum::HELP)) !!}"><i class="fa fa-question-circle fa-2x" style="color: #FFB400;"></i>帮助中心</a><span><i class="fa fa-angle-right fa-2x"></i></span></li>
             </ul>
         </div>
     </section>

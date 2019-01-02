@@ -10,7 +10,7 @@
     @if($params['step'] == 1)
         <section class="main-contain bg-white">
             <div class="container">
-                <div class="row">
+                <div class="row reserve-check">
                     <form method="post" action="{{url("/home/appointment/index")}}">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="hidden" name="step" value="2">
@@ -18,13 +18,16 @@
                             <h3>我在...</h3>
                         </div>
                         <div class="col-md-6 center">
-                            <a href="#" class="btn btn-empty btn-large">泰国</a>
+                            <input type="radio" name="country" id="country1" checked value="泰国">
+                            <label class="btn btn-empty-gray btn-large" for="country1">泰国</label>
                         </div>
                         <div class="col-md-6 center">
-                            <a href="#" class="btn btn-empty-gray btn-large">菲律宾</a>
+                            <input type="radio" name="country" id="country2" value="菲律宾">
+                            <label class="btn btn-empty-gray btn-large" for="country2">菲律宾</label>
                         </div>
                         <div class="col-md-6 center">
-                            <a href="#" class="btn btn-empty-gray btn-large">中国</a>
+                            <input type="radio" name="country" id="country3" value="中国">
+                            <label class="btn btn-empty-gray btn-large" for="country3">中国</label>
                         </div>
                         <div class="home-main-contant-style">
                             <div class="cd-home-title">
@@ -38,7 +41,7 @@
     @elseif($params['step'] == 2)
         <section class="main-contain bg-white">
             <div class="container">
-                <div class="row" style="padding-top: 40px;">
+                <div class="row reserve-check" style="padding-top: 40px;">
                     <form method="post" action="{{url("/home/appointment/index")}}">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="hidden" name="step" value="3">
@@ -47,10 +50,12 @@
                             <h4>泰国</h4>
                         </div>
                         <div class="col-md-6 center">
-                            <a href="#" class="btn btn-empty btn-large">女</a>
+                            <input type="radio" name="sex" id="sex1" checked value="女">
+                            <label for="sex1" class="btn btn-empty-gray btn-large">女</label>
                         </div>
                         <div class="col-md-6 center">
-                            <a href="#" class="btn btn-empty-gray btn-large">变性人</a>
+                            <input type="radio" name="sex" id="sex2" value="变性人">
+                            <label for="sex2" class="btn btn-empty-gray btn-large">变性人</label>
                         </div>
                         <div class="home-main-contant-style">
                             <div class="cd-home-title">

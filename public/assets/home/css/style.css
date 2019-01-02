@@ -412,7 +412,37 @@ ul.list-inline {
     margin-top: 30px;
     border: 1px #CCCCCC solid;
 }
+/*------------------------------------------------*/
+/*-----------------[预约选择国家，性别]---------------*/
+/*------------------------------------------------*/
 
+.reserve-check input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+}
+.reserve-check label{
+
+}
+.reserve-check input:checked+label {
+    color: #AA6DFC;
+    border: 1px solid #AA6DFC;
+}
+.reserve-check input:checked+label::after {
+    color: #AE79F8;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 25px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: 1px #AE79F8 solid;
+}
 /*------------------------------------------------*/
 /*-----------------[Title Style 2]---------------*/
 /*------------------------------------------------*/
