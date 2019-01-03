@@ -58,7 +58,7 @@
                                 <td>
                                     @can('role.edit')<a href="{!!route('admin.role.edit',array($data->id))!!}" class="btn btn-success btn-xs" title="编辑"><i class="mdi mdi-grease-pencil"></i> 编辑</a>@endcan
                                     @if(!$data->is_system)
-                                        @if($data->parent == Auth::user()->roles[0]->id)
+                                        @if($data->parent == Auth::guard('admin')->user()->roles[0]->id)
                                             @can('role.authority')<a href="{{url('admin/role/authority',array($data->id))}}" class="btn btn-info btn-xs layui-btn-normal" title="授权"><i class="mdi mdi-checkbox-marked"></i>授权</a>@endcan
                                         @endif
                                         @can('role.destroy')<a href="{!!route('admin.role.destroy',array($data->id))!!}" class="btn btn-danger btn-xs J_layer_dialog_del" title="删除"><i class="mdi mdi-delete-variant"></i>删除</a>@endcan

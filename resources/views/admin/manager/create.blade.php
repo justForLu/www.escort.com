@@ -19,7 +19,7 @@
                     <div class="card-body">
                         <form method="post" class="forms-sample J_ajaxForm" action="{!!route('admin.manager.store')!!}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="hidden" name="parent" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="parent" value="{{ Auth::guard('admin')->user()->id }}">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">用户名</label>
                                 <div class="col-sm-9">

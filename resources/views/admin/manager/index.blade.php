@@ -62,7 +62,7 @@
                             <td>
                                 @can('manager.edit')<a href="{!!route('admin.manager.edit',array($data->id))!!}" class="btn btn-success btn-xs"><i class="mdi mdi-grease-pencil"></i>编辑</a>@endcan
                                 @if(!$data->is_system)
-                                    @if($data->id != Auth::user()->id)
+                                    @if($data->id != Auth::guard('admin')->user()->id)
                                         @can('manager.destroy')<a href="{!!route('admin.manager.destroy',array($data->id))!!}" class="btn btn-danger btn-xs J_layer_dialog_del" data-token="{{csrf_token()}}"><i class="mdi mdi-delete-variant"></i>删除</a>@endcan
                                     @endif
                                 @endif

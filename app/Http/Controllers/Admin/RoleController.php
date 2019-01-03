@@ -37,6 +37,11 @@ class RoleController extends BaseController
      */
     protected $permissionRole;
 
+    /**
+     * @var
+     */
+    protected $auth;
+
 
     public function __construct(Role $role,Menu $menu,Permission $permission,PermissionRole $permissionRole)
     {
@@ -46,6 +51,7 @@ class RoleController extends BaseController
         $this->menu = $menu;
         $this->permission = $permission;
         $this->permissionRole = $permissionRole;
+        $this->auth = Auth::guard('admin');
     }
 
     /**
@@ -59,7 +65,7 @@ class RoleController extends BaseController
         $params = $request->all();
         $params['module'] = isset($params['module']) ? $params['module'] : ModuleEnum::ADMIN;
 
-        if(Auth::user()->is_system == BoolEnum::NO){
+        if($this->auth->user()->is_system == BoolEnum::NO){
             $params['parent'] = $this->currentUser->roles[0]->id;
         }
         $this->role->pushCriteria(new RoleCriteria($params));
@@ -210,9 +216,9 @@ class RoleController extends BaseController
 
             $permissions = $menu_ids = array();
 
-            if(Auth::user()->is_system == BoolEnum::NO){
+            if($this->auth->user()->is_system == BoolEnum::NO){
                 // 非系统角色只能分配当前角色所有的权限,找出登录用户的角色信息
-                $roles = Auth::user()->roles;
+                $roles = $this->auth->user()->roles;
 
                 foreach($roles as $role){
                     $permissions = array_merge($permissions,array_column($role->permissions->toArray(),'id'));
@@ -232,7 +238,7 @@ class RoleController extends BaseController
 
                 if(!empty($menuPermission)){
                     foreach($menuPermission as $itemKey => $itemVal){
-                        if(Auth::user()->is_system == BoolEnum::NO){
+                        if($this->auth->user()->is_system == BoolEnum::NO){
                             if(in_array($itemVal['id'],$permissions)){
                                 if(in_array($itemVal['id'],$rolePermissions)){
                                     $menuList[$key]->permissions[$itemKey]['checked'] = "checked=true";

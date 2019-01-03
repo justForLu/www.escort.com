@@ -27,7 +27,7 @@ class LogRepository extends BaseRepository
 
             $log = array(
                 'user_type' => 1,
-                'user_id' => Auth::user()->id,
+                'user_id' => Auth::guard('admin')->user()->id,
                 'operate_module' => $action['controller'],
                 'operate_action' => $action['method'],
                 'operate_params' => json_encode($params,JSON_UNESCAPED_UNICODE),

@@ -12,18 +12,20 @@ class BaseController extends Controller
 {
 
     protected $currentUser;
+    protected $auth;
 
     /**
      * 父类构造器
      * BaseController constructor.
      */
     public function __construct(){
+        $this->auth = Auth::guard('admin');
         //新建文件夹（如果文件夹不存在）
         $folder = "ueditor/php/upload/image/" . date('Ymd',time());
         if (!file_exists($folder)){
             mkdir($folder,0777,true);
         }
-        if(Auth::check()){
+        if($this->auth->check()){
             $userMenus = $this->getUserMenus();
             $this->currentUser = $this->getCurrentUser();
 
@@ -36,7 +38,7 @@ class BaseController extends Controller
      * @return mixed
      */
     public function getUserMenus(){
-        $uid = Auth::user()->id;
+        $uid = $this->auth->user()->id;
         $menuTree = json_decode(Cache::store('file')->get('menu_user_' . $uid));
 
         $uri = Request::path();
@@ -67,7 +69,7 @@ class BaseController extends Controller
      * @return mixed
      */
     public function getCurrentUser(){
-        $uid = Auth::user()->id;
+        $uid = $this->auth->user()->id;
 
         $currentUser = Manager::where('id',$uid)->with('roles')->first();
 

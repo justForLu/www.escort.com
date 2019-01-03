@@ -25,7 +25,7 @@ class MenuRepository extends BaseRepository
     public function getUserMenuTree(){
         $menuTree = array();
 
-        if(Auth::user()->is_system){
+        if(Auth::guard('admin')->user()->is_system){
             // 系统用户分配所有权限
             $params['module'] = ModuleEnum::ADMIN;
             $menuList = $this->pushCriteria(new MenuCriteria($params))->all();
@@ -33,7 +33,7 @@ class MenuRepository extends BaseRepository
             $menuTree = TreeService::makeTree($menuList);
         }else{
             // 创建用户分配指定权限
-            $roles = Auth::user()->roles;
+            $roles = Auth::guard('admin')->user()->roles;
 
             if($roles){
                 // 找出登录用户的所有权限id

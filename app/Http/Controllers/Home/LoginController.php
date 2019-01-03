@@ -79,9 +79,6 @@ class LoginController extends Controller
 
         $credentials = $this->getCredentials($loginRequest);
 
-        $mobile = $credentials['mobile'];
-        $password = bcrypt($credentials['password']);
-
         if (Auth::guard($this->getGuard())->attempt($credentials, $loginRequest->has('remember'))) {
 
             $this->updateLoginInfo($loginRequest);

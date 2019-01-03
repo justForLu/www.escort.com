@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'admin',
-        'passwords' => 'manager',
+        'guard' => 'home',
+        'passwords' => 'user',
     ],
 
     /*
@@ -80,7 +80,6 @@ return [
         'home' => [
             'driver' => 'eloquent',
             'model' => App\Models\Home\User::class,
-            'table' => 'user',
         ],
 
         // 'users' => [
