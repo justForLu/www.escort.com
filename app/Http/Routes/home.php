@@ -24,14 +24,15 @@ Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
     Route::get('/register', 'RegisterController@register');
     Route::post('/post_register', 'RegisterController@postRegister');
     Route::get('/logout', 'LoginController@logout');
-    Route::any('/index','IndexController@index');
-
-    Route::any('/escort/index','EscortController@index');
-    Route::any('/escort/details/{id}','EscortController@detail');
-
-    Route::any('/article/index/{position}','ArticleController@index');
 
     Route::group(['middleware'=>'home.auth'],function (){
+        Route::any('/index','IndexController@index');
+
+        Route::any('/escort/index','EscortController@index');
+        Route::any('/escort/details/{id}','EscortController@detail');
+
+        Route::any('/article/index/{position}','ArticleController@index');
+
         Route::any('/appointment/index','AppointmentController@index');
         Route::any('/appointment/list','AppointmentController@search_list');
         Route::any('/appointment/reserve','AppointmentController@reserve');

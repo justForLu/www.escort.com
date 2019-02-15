@@ -10,14 +10,20 @@ class BaseController extends Controller
 {
     protected $userInfo;
     protected $callback;
+    protected $auth;
 
     /**
      * 父类构造器(接口请求拦截)
      * BaseController constructor.
+     *
+     * BaseController constructor.
+     * @param $request
      */
     public function __construct($request){
 
-        $this->userInfo = $request->user;
+        $this->auth = Auth::guard('home');
+
+        $this->userInfo = $this->auth->user();
         $this->callback = isset($_SERVER['HTTP_REFERER']) ? urlencode($_SERVER['HTTP_REFERER']) : '';
 
 

@@ -20,6 +20,7 @@ class IndexController extends BaseController
 
     public function index()
     {
+//        print_r($this->userInfo->id);
 //        return redirect('/home/index');
         return view('home.index.index');
     }

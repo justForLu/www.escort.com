@@ -2,13 +2,13 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Http\Requests\Home\LoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\Home\UserRepository as Users;
 use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
@@ -42,14 +42,22 @@ class LoginController extends Controller
      */
     protected $user;
 
+    protected $request;
+
+    protected $auth;
 
     /**
      * LoginController constructor.
+     *
+     * LoginController constructor.
+     * @param Request $request
      * @param Users $user
      */
-    public function __construct(Users $user)
+    public function __construct(Request $request,Users $user)
     {
+        $this->request = $request;
         $this->user = $user;
+        $this->auth = Auth::guard('home');
     }
 
     /**
@@ -80,8 +88,8 @@ class LoginController extends Controller
 
         $credentials = $this->getCredentials($loginRequest);
 
-        if (Auth::guard($this->getGuard())->attempt($credentials, $loginRequest->has('remember'))) {
-            Log::info(Auth::user());
+        if (Auth::guard($this->getGuard())->attempt($credentials)) {
+
             $this->updateLoginInfo($loginRequest);
 
             if ($throttles) {
@@ -102,7 +110,7 @@ class LoginController extends Controller
     {
         $data['last_ip'] = $loginRequest->ip();
         $data['gmt_last_login'] = get_date();
-        $uid = Auth::user()->id;
+        $uid = $this->auth->user()->id;
         $this->user->update($data,$uid);
     }
 
