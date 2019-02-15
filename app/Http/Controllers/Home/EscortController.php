@@ -17,9 +17,9 @@ class EscortController extends BaseController
      */
     protected $escort;
 
-    public function __construct(EscortRepository $escort)
+    public function __construct(Request $request, EscortRepository $escort)
     {
-        parent::__construct();
+        parent::__construct($request);
 
         $this->escort = $escort;
     }

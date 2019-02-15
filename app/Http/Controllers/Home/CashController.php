@@ -17,9 +17,9 @@ class CashController extends BaseController
      */
     protected $cash;
 
-    public function __construct(CashRepository $cash)
+    public function __construct(Request $request, CashRepository $cash)
     {
-        parent::__construct();
+        parent::__construct($request);
 
         $this->cash = $cash;
     }

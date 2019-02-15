@@ -8,14 +8,16 @@ use Illuminate\Support\Facades\Cache;
 
 class BaseController extends Controller
 {
+    protected $userInfo;
     protected $callback;
 
     /**
      * 父类构造器(接口请求拦截)
      * BaseController constructor.
      */
-    public function __construct(){
+    public function __construct($request){
 
+        $this->userInfo = $request->user;
         $this->callback = isset($_SERVER['HTTP_REFERER']) ? urlencode($_SERVER['HTTP_REFERER']) : '';
 
 

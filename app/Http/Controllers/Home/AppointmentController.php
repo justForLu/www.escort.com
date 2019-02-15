@@ -17,9 +17,9 @@ class AppointmentController extends BaseController
      */
     protected $appointment;
 
-    public function __construct(AppointmentRepository $appointment)
+    public function __construct(Request $request, AppointmentRepository $appointment)
     {
-        parent::__construct();
+        parent::__construct($request);
 
         $this->appointment = $appointment;
     }

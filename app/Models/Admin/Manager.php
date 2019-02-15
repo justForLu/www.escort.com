@@ -28,7 +28,8 @@ class Manager extends Base implements AuthenticatableContract, CanResetPasswordC
 
     /**
      * 获取管理员的角色
-     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function roles(){
         return $this->belongsToMany(Role::class,'role_user','user_id','role_id')->wherePivot('module',ModuleEnum::ADMIN);

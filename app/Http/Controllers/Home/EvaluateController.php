@@ -17,9 +17,9 @@ class EvaluateController extends BaseController
      */
     protected $evaluate;
 
-    public function __construct(EvaluateController $evaluate)
+    public function __construct(Request $request, EvaluateController $evaluate)
     {
-        parent::__construct();
+        parent::__construct($request);
 
         $this->evaluate = $evaluate;
     }

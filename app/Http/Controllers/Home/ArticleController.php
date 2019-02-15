@@ -17,9 +17,9 @@ class ArticleController extends BaseController
      */
     protected $article;
 
-    public function __construct(ArticleRepository $article)
+    public function __construct(Request $request, ArticleRepository $article)
     {
-        parent::__construct();
+        parent::__construct($request);
 
         $this->article = $article;
     }

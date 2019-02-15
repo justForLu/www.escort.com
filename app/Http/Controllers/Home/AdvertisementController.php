@@ -16,9 +16,9 @@ class AdvertisementController extends BaseController
      */
     protected $advertisement;
 
-    public function __construct(AdvertisementRepository $advertisement)
+    public function __construct(Request $request, AdvertisementRepository $advertisement)
     {
-        parent::__construct();
+        parent::__construct($request);
 
         $this->advertisement = $advertisement;
     }

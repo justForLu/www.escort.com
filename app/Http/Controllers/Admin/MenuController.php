@@ -19,14 +19,11 @@ class MenuController extends BaseController
      */
     protected $menu;
 
-    protected $auth;
-
     public function __construct(Menu $menu)
     {
         parent::__construct();
 
         $this->menu = $menu;
-        $this->auth = Auth::guard('admin');
     }
     /**
      * Display a listing of the resource.
@@ -157,7 +154,7 @@ class MenuController extends BaseController
         // 更新用户缓存菜单
         if($result){
             // 获取用户菜单
-            $uid = $this->auth->user()->id;
+            $uid = Auth::user()->id;
             $userMenus = $this->menu->getUserMenuTree();
 
             // 缓存用户菜单

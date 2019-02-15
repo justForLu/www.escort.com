@@ -10,6 +10,7 @@ use App\Repositories\Admin\Criteria\MenuCriteria;
 use App\Repositories\BaseRepository;
 use App\Services\TreeService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class MenuRepository extends BaseRepository
 {

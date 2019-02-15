@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\Home\UserRepository as Users;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
@@ -80,7 +81,7 @@ class LoginController extends Controller
         $credentials = $this->getCredentials($loginRequest);
 
         if (Auth::guard($this->getGuard())->attempt($credentials, $loginRequest->has('remember'))) {
-
+            Log::info(Auth::user());
             $this->updateLoginInfo($loginRequest);
 
             if ($throttles) {
@@ -101,7 +102,7 @@ class LoginController extends Controller
     {
         $data['last_ip'] = $loginRequest->ip();
         $data['gmt_last_login'] = get_date();
-        $uid = Auth::User()->id;
+        $uid = Auth::user()->id;
         $this->user->update($data,$uid);
     }
 

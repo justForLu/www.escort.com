@@ -17,9 +17,9 @@ class FeedbackController extends BaseController
      */
     protected $feedback;
 
-    public function __construct(FeedbackRepository $feedback)
+    public function __construct(Request $request, FeedbackRepository $feedback)
     {
-        parent::__construct();
+        parent::__construct($request);
 
         $this->feedback = $feedback;
     }

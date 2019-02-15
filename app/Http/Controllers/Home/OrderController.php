@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Home;
 
 use App\Models\Admin\Order;
 use App\Http\Requests\Admin\OrderRequest;
@@ -17,9 +17,9 @@ class OrderController extends BaseController
      */
     protected $order;
 
-    public function __construct(OrderRepository $order)
+    public function __construct(Request $request, OrderRepository $order)
     {
-        parent::__construct();
+        parent::__construct($request);
 
         $this->order = $order;
     }

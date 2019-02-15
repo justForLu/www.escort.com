@@ -51,13 +51,6 @@ class LoginController extends Controller
     protected $menu;
 
     /**
-     * @var
-     */
-    protected $auth;
-
-
-
-    /**
      * LoginController constructor.
      * @param Manager $manager
      * @param Menu $menu
@@ -67,7 +60,6 @@ class LoginController extends Controller
 //        $this->middleware('guest', ['except' => 'getLogout']);
         $this->manager = $manager;
         $this->menu = $menu;
-        $this->auth = Auth::guard('admin');
     }
 
     /**
@@ -101,7 +93,7 @@ class LoginController extends Controller
             $this->updateLoginInfo($loginRequest);
 
             // 获取用户菜单
-            $uid = $this->auth->user()->id;
+            $uid = Auth::user()->id;
             $userMenus = $this->menu->getUserMenuTree();
 
             // 缓存用户菜单
@@ -125,7 +117,7 @@ class LoginController extends Controller
     {
         $data['last_ip'] = $loginRequest->ip();
         $data['gmt_last_login'] = get_date();
-        $uid = $this->auth->user()->id;
+        $uid = Auth::user()->id;
         $this->manager->update($data,$uid);
     }
 

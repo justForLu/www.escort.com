@@ -88,63 +88,6 @@ class SoapController extends Controller
     // 接口调用示例
     public function test()
     {
-        //$client=new SoapClient("http://xiajia.tunnel.senthink.com/soap/webservice?wsdl");
-        //$param=array('byProvinceName'=>'浙江');
-        //$paras = array(
-        //    "WeChatHotelId" => 13,
-        //    "WeChatRoomTypeId" => 33,
-        //    "CheckInTime" => "2017-02-28",
-        //    "CheckOutTime" => "2017-03-2",
-        //    "Contacts" => "测试",
-        //    "TelePhone" => "18067988403",
-        //    "Remark" => "",
-        //    "RoomNumber" => 2,
-        //    "Rate" => 100.0,
-        //    "PaymentAmount" => "100.0",
-        //    "PaymentMethod" => "微信支付",
-        //    "OrderNumber" => "CX201702151721028520"
-        //);
-        //$paras = array(
-        //    "hotel_id" => 13,
-        //    "name" => '测试3',
-        //    "mobile" => '15088704326',
-        //    "person_type" => "内宾",
-        //    "certificate_type" => "居民身份证",
-        //    "code" => "123456987452122",
-        //    "gmt_start" => "2017-02-16",
-        //    "gmt_end" => "2017-02-17",
-        //    "room_no" => '10010',
-        //    "out_order_no" => '1234522134',
-        //    "order_no" => ''
-        //);
-
-        //$paras = array(
-        //    "name" => '测试2',
-        //    "mobile" => '15088704326',
-        //    "person_type" => "内宾",
-        //    "certificate_type" => "居民身份证",
-        //    "code" => "123456987452122",
-        //    "gmt_start" => "2017-02-16",
-        //    "gmt_end" => "2017-02-17",
-        //    "room_no" => '10010',
-        //    "out_order_no" => '1234521442'
-        //);
-
-        //$paras = array(
-        //    "order_no" => 'CX201702071651572363'
-        //);
-        //try{
-        //    $ret = $client->insertCheckInfo($paras);
-        //    //$ret = $client->checkOut($paras);
-        //    //$ret = $client->updateCheckInfo($paras);
-        //    print_r($ret);
-        //}catch(\SoapFault $e){
-        //    echo $e->getMessage();
-        //}catch(Exception $e){
-        //    echo $e->getMessage();
-        //}
-
-        //$this->dispatch(new InsertReservation());
 
         $order_no = 'CX201702151555150850';
         
@@ -154,22 +97,6 @@ class SoapController extends Controller
 
 
         $client=new \SoapClient(config('hotel.pms.wsdl'));
-
-        //$param=array(
-        //    'WeChatHotelId' => $order->hotel_id,
-        //    'WeChatRoomTypeId' => $order->room_id,
-        //    'CheckInTime' => $order->gmt_start,
-        //    'CheckOutTime' => $order->gmt_end,
-        //    'Contacts' => $order->user->name,
-        //    'TelePhone' => $order->mobile,
-        //    'Remark' => '',
-        //    'RoomNumber' => $order->room_num,
-        //    'Rate' => round($order->cost/($order->room_num * (strtotime($order->gmt_end)-strtotime($order->gmt_start)) / 86400),2),
-        //    'PaymentAmount' => ($order->pay_type == PayTypeEnum::FRONT) ? 0 : $order->cost,
-        //    'PaymentMethod' =>  PayTypeEnum::getDesc($order->pay_type),
-        //    'OrderNumber' => $order->order_no,
-        //);
-        ////
 
         $param=array(
             'WeChatHotelId' => $order->hotel_id,

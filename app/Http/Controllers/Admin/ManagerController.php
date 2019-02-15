@@ -29,15 +29,12 @@ class ManagerController extends BaseController
      */
     protected $manager;
 
-    protected $auth;
-
     public function __construct(Role $role,Manager $manager)
     {
         parent::__construct();
 
         $this->role = $role;
         $this->manager = $manager;
-        $this->auth = Auth::guard('admin');
     }
 
     /**
@@ -50,7 +47,7 @@ class ManagerController extends BaseController
     {
         $params = $request->all();
 
-        if($this->auth->user()->is_system == BoolEnum::NO){
+        if(Auth::user()->is_system == BoolEnum::NO){
             $params['parent'] = $this->currentUser['id'];
         }
         $this->manager->pushCriteria(new ManagerCriteria($params));
@@ -67,7 +64,7 @@ class ManagerController extends BaseController
     public function create()
     {
         $params = array();
-        if($this->auth->user()->is_system == BoolEnum::NO){
+        if(Auth::user()->is_system == BoolEnum::NO){
             $params['parent'] = $this->currentUser->roles[0]->id;
         }
 
