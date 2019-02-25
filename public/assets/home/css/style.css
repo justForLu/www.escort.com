@@ -198,7 +198,7 @@ ul.list-inline {
     border-top:1px solid #ddd;
 }
 .main-theme-color1{
-    background: #a0ce4e;  
+    background: #a0ce4e;
 }
 .animated-img {
     margin-right: 30px;
@@ -227,7 +227,7 @@ ul.list-inline {
 }
 
 .page-heading {
-    background: rgba(0, 0, 0, 0) url("../images/breadcrumb.jpg") no-repeat fixed center center / cover ;
+    background: rgba(0, 0, 0, 0) url("../img/breadcrumb.jpg") no-repeat fixed center center / cover ;
     padding: 80px 0;
     position: relative;
     z-index: 1;
@@ -413,6 +413,152 @@ ul.list-inline {
     border: 1px #CCCCCC solid;
 }
 /*------------------------------------------------*/
+/*-----------------[确定预约]---------------*/
+/*------------------------------------------------*/
+.confirm-appointment .form-group{
+    padding: 0px 5px;
+}
+.confirm-appointment .form-group label{
+    float: left;
+    color: #333;
+    width: 25%;
+}
+.confirm-appointment .form-group div.col-sm-9{
+    overflow: hidden;
+}
+.confirm-appointment .form-group input.form-control,textarea.form-control{
+    float: left;
+    border: 1px solid #b179ff;
+}
+/*------------------------------------------------*/
+/*-----------------[我的收益]---------------*/
+/*------------------------------------------------*/
+.my-profit{
+    background-image: url(../img/person-bg.png);
+    width: 100%;
+    background-size: cover;
+    height: 250px;
+    color: #fff;
+}
+.my-profit .profit-info{
+    height: 120px;
+    text-align: center;
+    padding: 30px;
+}
+
+.my-profit .profit-info .income{
+    font-size: 24px;
+    position: relative;
+    top: 15px;
+}
+
+.my-profit .profit-info .my-income{
+    line-height: 40px;
+}
+
+.my-profit .profit-info .apply-cash{
+    color: #b179ff;
+    background-color: #fff;
+    padding: 5px 30px;
+    border-radius: 20px;
+}
+.my-profit .profit-order-bg{
+    margin-top: 30px;
+    background-color: #000;
+    opacity: 0.2;
+    height: 100px;
+    float: left;
+    width: 100%;
+}
+.my-profit .profit-order-box{
+    position: relative;
+    bottom: 80px;
+    font-size: 16px;
+}
+.my-profit .all-order{
+    float: left;
+    width: 50%;
+    text-align: center;
+    border-right: 2px #fff solid;
+}
+.my-profit .all-order p{
+    line-height: 22px;
+}
+.my-profit .today-order{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.my-profit .today-order p{
+    line-height: 22px;
+}
+.profit-order{
+
+}
+.profit-order .profit-list{
+
+}
+.profit-order .profit-list ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.profit-order .profit-list ul li i{
+    background: linear-gradient(to bottom, #da8cff, #9a55ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.profit-turn .switch {
+    width:100px;
+    margin:50px 0px 0 100px;
+}
+.profit-turn .btn_fath {
+    margin-top:10px;
+    position:relative;
+    border-radius:20px;
+}
+.profit-turn .btn1 {
+    float:left;
+}
+.profit-turn .btn2 {
+    float:right;
+}
+.profit-turn .btnSwitch {
+    height:40px;
+    width:50px;
+    border:none;
+    color:#fff;
+    line-height:40px;
+    font-size:16px;
+    text-align:center;
+    z-index:1;
+}
+.profit-turn .move {
+    z-index:100;
+    width:40px;
+    border-radius:20px;
+    height:40px;
+    position:absolute;
+    cursor:pointer;
+    border:1px solid #828282;
+    background-color:#f1eff0;
+    box-shadow:1px 2px 2px 1px #fff inset,0 0 5px 1px #999;
+    top: 2px;
+}
+.profit-turn .on .move {
+    left:60px;
+}
+.profit-turn .on.btn_fath {
+    background-color:#44b549;
+    height:43px
+}
+.profit-turn .off.btn_fath {
+    background-color:#828282;
+    height:43px
+}
+
+/*------------------------------------------------*/
 /*-----------------[预约选择国家，性别]---------------*/
 /*------------------------------------------------*/
 
@@ -561,7 +707,7 @@ ul.list-inline {
 /*--------------[个人中心]-----------*/
 /*------------------------------------------------*/
 .person-box{
-    background-image: url("../images/person-bg.png");no-repeat;width:100%;height:100%;background-size:cover;
+    background-image: url("../img/person-bg.png");no-repeat;width:100%;height:100%;background-size:cover;
     height: 150px;
 }
 .person-box a{
@@ -797,6 +943,66 @@ ul.list-inline {
     border-radius: 5vw;
     margin-left: 10px;
 }
+/*------------------------------------------------*/
+/*--------------[订单详情]-----------*/
+/*------------------------------------------------*/
+.order-detail{
+    margin: 10px 20px;
+    text-align: center;
+    border-bottom: 1px #ececec solid;
+    padding: 10px;
+    overflow: hidden;
+}
+.order-detail .order-img-box{
+    float: left;
+    width: 35%;
+    height: 25vw;
+}
+.order-detail .order-img-box img{
+    border-radius: 15px;
+    object-fit: cover;
+    height: 100%;
+}
+.order-detail .order-content-box{
+    float: left;
+    padding-left: 15px;
+    width: 64%;
+    text-align: left;
+}
+.order-detail .order-content-box p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 12vw;
+}
+.order-detail .order-content-box .escort-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #AA6DFC;
+}
+.order-detail .order-content-box .order-status-icon{
+    color: #fff;
+    font-weight: bold;
+    background-color: #FB9529;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.order-detail ul li{
+    overflow: hidden;
+}
+.order-detail ul li .title{
+    float: left;
+    padding-left: 20px;
+    width: 30%;
+    text-align: left;
+}
+.order-detail ul li .content{
+    float: right;
+    width: 69%;
+    text-align: right;
+    padding-right: 10px;
+}
 
 /*------------------------------------------------*/
 /*--------------小姐详情-----------*/
@@ -805,12 +1011,18 @@ ul.list-inline {
     background-color: #E3E3E3;
 }
 .escort-details .escort-img{
-    padding-left: 16px;
     background-color: #fff;
+    padding: 0px 10px;
+}
+.escort-details .escort-img ul{
+    overflow: hidden;
+    border-bottom: 1px #ececec solid;
+    padding-bottom: 10px;
 }
 .escort-details .escort-img ul li{
-    width: 48%;
+    width: 50%;
     float: left;
+    padding: 0px 3px;
 }
 .escort-details .escort-img ul li img{
 
@@ -820,30 +1032,255 @@ ul.list-inline {
     background-color: #fff;
 }
 .escort-details .escort-service ul li{
-
+    border-bottom: 1px #ececec solid;
+    overflow: hidden;
+    padding: 0px 10px;
+}
+.escort-details .escort-service ul li p.title{
+    float: left;
+    width: 30%;
+    line-height: 30px;
+}
+.escort-details .escort-service ul li p.content{
+    float: right;
+    width: 70%;
+    text-align: right;
+    line-height: 30px;
 }
 .escort-details .escort-price{
-    padding: 10px;
+    padding: 10px 10px 30px 10px;
     background-color: #fff;
+    border-bottom: 10px #ececec solid;
+}
+.escort-details .escort-price .escort-price-title{
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
+    background-color: #E2E2E2;
+    color: #6D6D6D;
+}
+.escort-details .escort-price .escort-price-title p{
+    float: left;
+    width: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+}
+.escort-details .escort-price .escort-price-title span{
+    border-bottom: 3px #b179ff solid;
+    padding-bottom: 6px;
+    color: #b179ff;
+}
+.escort-details .escort-price ul{
+    padding-top: 10px;
 }
 .escort-details .escort-price ul li{
-
+    overflow: hidden;
+}
+.escort-details .escort-price ul li p{
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px #ececec solid;
+}
+.escort-details .escort-price ul li p a{
+    padding: 2px 10px;
+    font-size: 14px;
+    margin-top: 0px;
+    border-radius: 5px;
 }
 .escort-details .evaluate-total{
-    padding: 10px;
+    padding: 15px;
     background-color: #fff;
+    border-bottom: 10px #ececec solid;
 }
 .escort-details .evaluate-total ul li{
-
+    overflow: hidden;
+    padding-top: 10px;
+}
+.escort-details .evaluate-total div.left{
+    font-size: 36px;
+    color: #FBAA57;
+    float: left;
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+}
+.escort-details .evaluate-total div.right{
+    float: left;
+    width: 30%;
+    text-align: center;
 }
 .escort-details .escort-evaluate{
-    padding: 10px;
+    padding: 10px 10px 30px 10px;
     background-color: #fff;
 }
+.escort-details .escort-evaluate div.left{
+    float: left;
+    width: 20%;
+    padding: 15px;
+    height: 20vw;
+    position: relative;
+    bottom: 10px;
+}
+.escort-details .escort-evaluate div.left img{
+    object-fit: cover;
+    height: 100%;
+}
+.escort-details .escort-evaluate div.middle{
+    float: left;
+}
+.escort-details .escort-evaluate div.middle p{
+    line-height: 30px;
+}
+.escort-details .escort-evaluate div.middle i{
+    color: #FBAA57;
+}
+.escort-details .escort-evaluate div.right{
+    float: right;
+}
 .escort-details .escort-evaluate ul li{
+    overflow: hidden;
+    padding: 10px 0px 5px 0px;
+    border-bottom: 1px #ececec solid;
+}
+/*------------------------------------------------*/
+/*--------------[主页管理]-----------*/
+/*------------------------------------------------*/
+.basic-info{
+    border-bottom: 10px #ececec solid;
+}
+.basic-info ul li{
+    padding: 20px;
+    border-bottom: 1px #ececec solid;
+}
+.body-info{
+    border-bottom: 10px #ececec solid;
+}
+.body-info ul li{
+    padding: 20px;
+    border-bottom: 1px #ececec solid;
+}
+.server-info{
+    border-bottom: 10px #ececec solid;
+}
+.server-info ul li{
+    padding: 20px;
+    border-bottom: 1px #ececec solid;
+}
+/*------------------------------------------------*/
+/*--------------[申请结算]-----------*/
+/*------------------------------------------------*/
+.balance-header{
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+.balance-header ul li.active{
 
 }
-
+.balance-header ul li{
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.balance-header ul li a{
+    width: 100%;
+    height: 100%;
+    display: block
+}
+.balance-list{
+    margin-top: 10px;
+}
+.balance-list ul li{
+    margin: 10px 10px 15px 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 1px 4px #999;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 28vw;
+}
+.balance-list ul li .checkbox{
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+.balance-list .order-img-box{
+    float: left;
+    width: 23%;
+    height: 23vw;
+}
+.balance-list .order-img-box img{
+    border-radius: 7px;
+    object-fit: cover;
+    height: 100%;
+}
+.balance-list .order-content-box{
+    float: left;
+    padding-left: 10px;
+    width: 57%;
+}
+.balance-list .order-content-box p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 7.5vw;
+}
+.balance-list .order-content-box .escort-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #AA6DFC;
+}
+.balance-list .order-content-box .order-status-icon{
+    color: #fff;
+    font-weight: bold;
+    background-color: #FB9529;
+    padding: 1px 7px;
+    border-radius: 10px;
+}
+.balance-list .order-content-box .order-status{
+    color: #AA6DFC;
+    float: right;
+}
+.balance-list .order-content-box .order-btn{
+    text-align: right;
+}
+.balance-list .order-content-box p a{
+    border: 1px #BABABA solid;
+    padding: 0.6vw 3vw;
+    border-radius: 5vw;
+    margin-left: 10px;
+}
+/*------------------------------------------------*/
+/*--------------[添加费用]-----------*/
+/*------------------------------------------------*/
+.add-cost ul li{
+    padding: 20px;
+    border-bottom: 1px #ececec solid;
+}
+.add-card ul li{
+    padding: 20px;
+    border-bottom: 1px #ececec solid;
+}
+.cost-list ul li{
+    overflow: hidden;
+    border-bottom: 1px #ececec solid;
+    padding: 10px;
+    width: 100%;
+}
+.cost-list ul li p{
+    float: left;
+    width: 33%;
+}
+.address-list{
+    margin-top: 30px;
+    border-top: 10px #ececec solid;
+    padding-top: 20px;
+}
 
 /*------------------------------------------------*/
 /*--------------[Title Style 5]-----------*/
@@ -928,7 +1365,7 @@ ul.list-inline {
     border-color:#ddd;
 }
 .pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover{
-    background-color: #a0ce4e;  
+    background-color: #a0ce4e;
     color: #fff;
 
 }
@@ -1136,7 +1573,7 @@ ul.list-inline {
     top: 50%;
     margin-top: -60px;
     background-color: rgba(255, 255, 255, 0.2);
-    background-image: url(../images/banner/arrow-left.png) !important;
+    background-image: url(../img/banner/arrow-left.png) !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-size: 33px 60px;
@@ -1147,7 +1584,7 @@ ul.list-inline {
     /*left: -100px;*/
 }
 .carousel-control.right {
-    background-image: url(../images/banner/arrow-right.png) !important;
+    background-image: url(../img/banner/arrow-right.png) !important;
     /*right: -100px;*/
 }
 .header.transp + .carousel .carousel-control {
@@ -1178,30 +1615,30 @@ ul.list-inline {
 }
 
 @media (max-width: 767px) {
-   .carousel-caption{
-       display:none;
+    .carousel-caption{
+        display:none;
     }
 }
 /*------------------------------------------------*/
 /*--------------[BG-IMAGE]-----------*/
 /*------------------------------------------------*/
 .bg-image-block {
-  width: 100%;
-  height: auto;
-  padding: 245px 0;
-  position: relative;
-  background: url(../images/banner/slide-2.png) repeat fixed;
-  background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 245px 0;
+    position: relative;
+    background: url(../img/banner/slide-2.png) repeat fixed;
+    background-size: cover;
 }
 
 .bg-image-block:before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: " ";
-  position: absolute;
-  background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    position: absolute;
+    background: rgba(0,0,0,0.5);
 }
 .headline-center {
     position: relative;
@@ -1266,8 +1703,8 @@ ul.list-inline {
 
 
 .parallax-all-block{
-     box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
-     position: relative;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 .parallaxBg-img > img {
     vertical-align: middle;
@@ -1288,7 +1725,7 @@ ul.list-inline {
 }
 @media (max-width: 767px) {
     .parallax-all-block-text{
-     margin-top: 0;
+        margin-top: 0;
     }
 }
 /*------------------------------------------------*/
@@ -1473,8 +1910,8 @@ service-item .icon {
     }
 }
 @media (max-width: 1023px) {
-   .quality-of-work .content-block:after  {
-       display: none;
+    .quality-of-work .content-block:after  {
+        display: none;
     }
 }
 .quality-of-work .content-block:after {
@@ -1490,7 +1927,7 @@ service-item .icon {
     -ms-transform: skew(-7deg, 0deg);
     width: 5em;
     z-index: -1;
-    
+
 }
 
 .quality-of-work .content-block .block-top-title h3 {
@@ -1524,7 +1961,7 @@ service-item .icon {
     margin-left: 4em;
     margin-bottom: 0;
     color: #fff;
-    
+
 }
 .quality-of-work .content-block .features li:hover .icon-block {
     background: #a0ce4e;
@@ -1537,7 +1974,7 @@ service-item .icon {
 
 
 .parallax-block {
-    background: rgba(0, 0, 0, 0) url("../images/dark_wood.png") repeat fixed 50% 0;
+    background: rgba(0, 0, 0, 0) url("../img/dark_wood.png") repeat fixed 50% 0;
     color: #ffffff;
     padding: 80px 0;
     position: relative;
@@ -1971,7 +2408,7 @@ service-item .icon {
     background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
     display: flex;
     height: 100vh;
-    justify-content: center;  
+    justify-content: center;
 }
 .cd-bg-1 {
     background: rgba(0, 0, 0, 0) linear-gradient(to left, #02aab0, #00cdac) repeat scroll 0 0;
@@ -2084,7 +2521,7 @@ service-item .icon {
     cursor: auto;
 }
 .cbp-l-grid-mosaic .cbp-caption-activeWrap{
-    background-color: rgba(0, 0, 0, 0.9)!important;  
+    background-color: rgba(0, 0, 0, 0.9)!important;
 }
 
 .standard-single-comments-list {
@@ -2124,13 +2561,13 @@ service-item .icon {
     right: 0;
     background-color: #a0ce4e;
     color: #fff;
-   
+
 }
 .standard-comments-form div {
     margin-bottom: 30px;
 }
 .cbp-l-filters-list .cbp-filter-item{
-      border-color: #a0ce4e!important;
+    border-color: #a0ce4e!important;
 }
 .cbp-l-filters-list .cbp-filter-item.cbp-filter-item-active{
     background-color: #a0ce4e!important;
@@ -2377,7 +2814,7 @@ table, th, td {
 /*--------------[LOGIN/REGISTRE STYLE]-----------*/
 /*------------------------------------------------*/
 .login-register{
-    background-image: url(../images/login-bg.png); width:100%;height:100%;background-size:cover;!important;
+    background-image: url(../img/login-bg.png); width:100%;height:100%;background-size:cover;!important;
     background-repeat: no-repeat;
 }
 .login-header {
@@ -2603,7 +3040,7 @@ table, th, td {
 }
 .news-subscribe .social-icons > li > a{
     margin-top:0;
-     background: #fff none repeat scroll 0 0;
+    background: #fff none repeat scroll 0 0;
 }
 .news-subscribe .social-icons > li > a i {
     color: #787878;
@@ -2613,12 +3050,12 @@ table, th, td {
 }
 @media (max-width: 990px) {
     .news-subscribe h3,.news-subscribe .social-icons-simple {
-text-align: center;
+        text-align: center;
     }
 }
 @media (max-width: 990px) {
     .newsletter-form-block {
-padding: 15px 0;
+        padding: 15px 0;
     }
 }
 
@@ -2630,12 +3067,12 @@ padding: 15px 0;
 }
 @media (max-width: 367px) {
     .content-text .btn.btn-product.mr15{
-           margin-bottom: 30px;
+        margin-bottom: 30px;
     }
 }
 
 @media (max-width: 990px) {
     .welcome-img img, .why-choose-img img, .theme-image, .clients-block img{
-          width: 100%;
+        width: 100%;
     }
 }

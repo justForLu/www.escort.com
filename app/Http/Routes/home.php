@@ -40,7 +40,9 @@ Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
         Route::any('/user/find_password','UserController@findPassword');
         Route::any('/user/reset_password','UserController@resetPassword');
         Route::any('/user/index','UserController@index');
-        Route::any('/user/order','UserController@order');
+        Route::any('/user/escort_info','UserController@escort_info');
+        Route::any('/user/escort_add','UserController@escort_add');
+        Route::any('/user/escort_edit','UserController@escort_edit');
     });
 
 });
