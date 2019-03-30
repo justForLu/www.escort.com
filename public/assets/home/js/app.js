@@ -412,7 +412,7 @@ if (J_upload_image.length) {
   J_upload_image.each(function () {
     var picId = $(this).data('id');
     var picWidth = ($(this).data('width') == '' || $(this).data('width') == undefined) ? 640 : $(this).data('width');
-    var url = ($(this).data('url') == '' || $(this).data('url') == undefined) ? window.location.protocol + "//" + window.location.host + '/admin/file/uploadPic' : $(this).data('url');
+    var url = ($(this).data('url') == '' || $(this).data('url') == undefined) ? window.location.protocol + "//" + window.location.host + '/home/file/uploadPic' : $(this).data('url');
     var token = $(this).data('_token');
     var type = ($(this).data('type') == 'multiple') ? 'multiple' : 'single';
     var image_val = ($(this).find("input[name='image_val']").val() == undefined) ? '' : $(this).find("input[name='image_val']").val();

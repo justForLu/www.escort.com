@@ -10,5 +10,6 @@
 <link rel="stylesheet" href="{{asset("/assets/home/plugins/owl-carousel/owl.carousel.css")}}">
 <link rel="stylesheet" href="{{asset("/assets/home/plugins/owl-carousel/owl.theme.css")}}">
 <link rel="stylesheet" type="text/css" href="{{asset("/assets/home/css/cubeportfolio.min.css")}}">
+<link rel="stylesheet" href="{{asset("/assets/plugins/weui/weui.css")}}">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
 <link href="http://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet" property="stylesheet" type="text/css" media="all"/>

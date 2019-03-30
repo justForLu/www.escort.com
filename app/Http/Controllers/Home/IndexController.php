@@ -25,6 +25,19 @@ class IndexController extends BaseController
         return view('home.index.index');
     }
 
+    /**
+     * 提示
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function message(Request $request){
+        $data = $request->all();
+        $message = isset($data['message']) && !empty($data['message']) ? $data['message'] : '未知的提示信息';
+
+        return view('home.index.message', compact('message'));
+    }
+
 }
 
 

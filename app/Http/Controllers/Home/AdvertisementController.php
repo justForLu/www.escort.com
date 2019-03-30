@@ -6,6 +6,8 @@ use App\Models\Home\Advertisement;
 use App\Repositories\Home\Criteria\AdvertisementCriteria;
 use App\Repositories\Home\AdvertisementRepository;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\AdvertisementRequest;
+use App\Http\Controllers\Admin\FileController;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Config;
 

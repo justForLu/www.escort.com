@@ -27,6 +27,8 @@ Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
 
     Route::group(['middleware'=>'home.auth'],function (){
         Route::any('/index','IndexController@index');
+        Route::any('/index/message','IndexController@message');
+        Route::post('/file/uploadPic','FileController@uploadPic');
 
         Route::any('/escort/index','EscortController@index');
         Route::any('/escort/details/{id}','EscortController@detail');
@@ -42,7 +44,9 @@ Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
         Route::any('/user/index','UserController@index');
         Route::any('/user/escort_info','UserController@escort_info');
         Route::any('/user/escort_add','UserController@escort_add');
+        Route::any('/user/escort_store','UserController@escort_store');
         Route::any('/user/escort_edit','UserController@escort_edit');
+        Route::any('/user/escort_update','UserController@escort_update');
     });
 
 });

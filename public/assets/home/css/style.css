@@ -227,7 +227,7 @@ ul.list-inline {
 }
 
 .page-heading {
-    background: rgba(0, 0, 0, 0) url("../img/breadcrumb.jpg") no-repeat fixed center center / cover ;
+    background: rgba(0, 0, 0, 0) url("../images/breadcrumb.jpg") no-repeat fixed center center / cover ;
     padding: 80px 0;
     position: relative;
     z-index: 1;
@@ -434,7 +434,7 @@ ul.list-inline {
 /*-----------------[我的收益]---------------*/
 /*------------------------------------------------*/
 .my-profit{
-    background-image: url(../img/person-bg.png);
+    background-image: url(../images/person-bg.png);
     width: 100%;
     background-size: cover;
     height: 250px;
@@ -707,7 +707,7 @@ ul.list-inline {
 /*--------------[个人中心]-----------*/
 /*------------------------------------------------*/
 .person-box{
-    background-image: url("../img/person-bg.png");no-repeat;width:100%;height:100%;background-size:cover;
+    background-image: url("../images/person-bg.png");no-repeat;width:100%;height:100%;background-size:cover;
     height: 150px;
 }
 .person-box a{
@@ -1166,9 +1166,24 @@ ul.list-inline {
 .server-info{
     border-bottom: 10px #ececec solid;
 }
+.server-info div{
+    padding: 15px;
+}
 .server-info ul li{
-    padding: 20px;
-    border-bottom: 1px #ececec solid;
+    padding: 0px 20px;
+    float: left;
+}
+.img-info{
+    border-bottom: 10px #ececec solid;
+}
+.img-info div{
+    padding: 15px;
+}
+.img-info div h3{
+
+}
+.img-info div p{
+    text-align: center;
 }
 /*------------------------------------------------*/
 /*--------------[申请结算]-----------*/
@@ -1573,7 +1588,7 @@ ul.list-inline {
     top: 50%;
     margin-top: -60px;
     background-color: rgba(255, 255, 255, 0.2);
-    background-image: url(../img/banner/arrow-left.png) !important;
+    background-image: url(../images/banner/arrow-left.png) !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-size: 33px 60px;
@@ -1584,7 +1599,7 @@ ul.list-inline {
     /*left: -100px;*/
 }
 .carousel-control.right {
-    background-image: url(../img/banner/arrow-right.png) !important;
+    background-image: url(../images/banner/arrow-right.png) !important;
     /*right: -100px;*/
 }
 .header.transp + .carousel .carousel-control {
@@ -1627,7 +1642,7 @@ ul.list-inline {
     height: auto;
     padding: 245px 0;
     position: relative;
-    background: url(../img/banner/slide-2.png) repeat fixed;
+    background: url(../images/banner/slide-2.png) repeat fixed;
     background-size: cover;
 }
 
@@ -1974,7 +1989,7 @@ service-item .icon {
 
 
 .parallax-block {
-    background: rgba(0, 0, 0, 0) url("../img/dark_wood.png") repeat fixed 50% 0;
+    background: rgba(0, 0, 0, 0) url("../images/dark_wood.png") repeat fixed 50% 0;
     color: #ffffff;
     padding: 80px 0;
     position: relative;
@@ -2814,7 +2829,7 @@ table, th, td {
 /*--------------[LOGIN/REGISTRE STYLE]-----------*/
 /*------------------------------------------------*/
 .login-register{
-    background-image: url(../img/login-bg.png); width:100%;height:100%;background-size:cover;!important;
+    background-image: url(../images/login-bg.png); width:100%;height:100%;background-size:cover;!important;
     background-repeat: no-repeat;
 }
 .login-header {
